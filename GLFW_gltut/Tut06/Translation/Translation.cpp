@@ -9,8 +9,8 @@ const int numberOfVertices = 8;
 
 #define GREEN_COLOR 0.0f, 1.0f, 0.0f, 1.0f
 #define BLUE_COLOR 	0.0f, 0.0f, 1.0f, 1.0f
-#define RED_COLOR 1.0f, 0.0f, 0.0f, 1.0f
-#define GREY_COLOR 0.8f, 0.8f, 0.8f, 1.0f
+#define RED_COLOR   1.0f, 0.0f, 0.0f, 1.0f
+#define GREY_COLOR  0.8f, 0.8f, 0.8f, 1.0f
 #define BROWN_COLOR 0.5f, 0.5f, 0.0f, 1.0f
 
 const float vertexData[] =
@@ -63,28 +63,28 @@ glm::vec3 StationaryOffset(float fElapsedTime)
     return glm::vec3(0.0f, 0.0f, -20.0f);
 }
 
-glm::vec3 OvalOffset(float fElapsedTime)
+glm::vec3 OvalOffset(float elapsedTime)
 {
-    const float fLoopDuration = 3.0f;
-    const float fScale = 3.14159f * 2.0f / fLoopDuration;
+    const float loopDuration = 3.0f;
+    const float scale = 3.14159f * 2.0f / loopDuration;
     
-    float fCurrTimeThroughLoop = fmodf(fElapsedTime, fLoopDuration);
+    float currTimeThroughLoop = fmodf(elapsedTime, loopDuration);
     
-    return glm::vec3(cosf(fCurrTimeThroughLoop * fScale) * 4.f,
-                     sinf(fCurrTimeThroughLoop * fScale) * 6.f,
+    return glm::vec3(cosf(currTimeThroughLoop * scale) * 4.f,
+                     sinf(currTimeThroughLoop * scale) * 6.f,
                      -20.0f);
 }
 
-glm::vec3 BottomCircleOffset(float fElapsedTime)
+glm::vec3 BottomCircleOffset(float elapsedTime)
 {
-    const float fLoopDuration = 12.0f;
-    const float fScale = 3.14159f * 2.0f / fLoopDuration;
+    const float loopDuration = 12.0f;
+    const float scale = 3.14159f * 2.0f / loopDuration;
     
-    float fCurrTimeThroughLoop = fmodf(fElapsedTime, fLoopDuration);
+    float fCurrTimeThroughLoop = fmodf(elapsedTime, loopDuration);
     
-    return glm::vec3(cosf(fCurrTimeThroughLoop * fScale) * 5.f,
+    return glm::vec3(cosf(fCurrTimeThroughLoop * scale) * 5.f,
                      -3.5f,
-                     sinf(fCurrTimeThroughLoop * fScale) * 5.f - 20.0f);
+                     sinf(fCurrTimeThroughLoop * scale) * 5.f - 20.0f);
 }
 
 struct Instance
@@ -93,11 +93,11 @@ struct Instance
     
     OffsetFunc CalcOffset;
     
-    glm::mat4 ConstructMatrix(float fElapsedTime)
+    glm::mat4 ConstructMatrix(float elapsedTime)
     {
         glm::mat4 theMat(1.0f);
         
-        theMat[3] = glm::vec4(CalcOffset(fElapsedTime), 1.0f);
+        theMat[3] = glm::vec4(CalcOffset(elapsedTime), 1.0f);
         
         return theMat;
     }

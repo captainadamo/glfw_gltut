@@ -6,8 +6,8 @@
 const char *tutorialName = "Tutorial 02 Fragment Position Colors";
 
 const float vertexData[] = {
-    0.75f, 0.75f, 0.0f, 1.0f,
-    0.75f, -0.75f, 0.0f, 1.0f,
+     0.75f,  0.75f, 0.0f, 1.0f,
+     0.75f, -0.75f, 0.0f, 1.0f,
     -0.75f, -0.75f, 0.0f, 1.0f,
 };
 

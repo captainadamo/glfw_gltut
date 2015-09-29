@@ -6,8 +6,8 @@
 const char *tutorialName = "Tutorial 01";
 
 const float vertexPositions[] = {
-    0.75f, 0.75f, 0.0f, 1.0f,
-    0.75f, -0.75f, 0.0f, 1.0f,
+     0.75f,  0.75f, 0.0f, 1.0f,
+     0.75f, -0.75f, 0.0f, 1.0f,
     -0.75f, -0.75f, 0.0f, 1.0f,
 };
 

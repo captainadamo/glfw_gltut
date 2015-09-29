@@ -8,22 +8,22 @@ const int numberOfVertices = 8;
 
 #define GREEN_COLOR 0.0f, 1.0f, 0.0f, 1.0f
 #define BLUE_COLOR 	0.0f, 0.0f, 1.0f, 1.0f
-#define RED_COLOR 1.0f, 0.0f, 0.0f, 1.0f
+#define RED_COLOR   1.0f, 0.0f, 0.0f, 1.0f
 
 const float Z_OFFSET = 0.5f;
 
 const float vertexData[] = {
     //Front face positions
-    -400.0f,		 400.0f,			0.0f,
-    400.0f,		 400.0f,			0.0f,
-    400.0f,		-400.0f,			0.0f,
-    -400.0f,		-400.0f,			0.0f,
+    -400.0f,  400.0f, 0.0f,
+     400.0f,  400.0f, 0.0f,
+     400.0f, -400.0f, 0.0f,
+    -400.0f, -400.0f, 0.0f,
     
     //Rear face positions
-    -200.0f,		 600.0f,			-Z_OFFSET,
-    600.0f,		 600.0f,			0.0f - Z_OFFSET,
-    600.0f,		-200.0f,			0.0f - Z_OFFSET,
-    -200.0f,		-200.0f,			-Z_OFFSET,
+    -200.0f,  600.0f, -Z_OFFSET,
+     600.0f,  600.0f,  0.0f - Z_OFFSET,
+     600.0f, -200.0f,  0.0f - Z_OFFSET,
+    -200.0f, -200.0f, -Z_OFFSET,
     
     //Front face colors.
     GREEN_COLOR,

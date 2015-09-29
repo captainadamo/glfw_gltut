@@ -114,6 +114,13 @@
 		66D462C31BBB0B6800FBC7E7 /* MatrixPerspective.vert in Resources */ = {isa = PBXBuildFile; fileRef = 66D462981BBB0A3700FBC7E7 /* MatrixPerspective.vert */; };
 		66D462C41BBB0B6800FBC7E7 /* StandardColors.frag in Resources */ = {isa = PBXBuildFile; fileRef = 66D4629A1BBB0A3700FBC7E7 /* StandardColors.frag */; };
 		66D462C61BBB283600FBC7E7 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66D462C51BBB283600FBC7E7 /* info.plist */; settings = {ASSET_TAGS = (); }; };
+		66D462D41BBB37F100FBC7E7 /* Scale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66D462D31BBB37F100FBC7E7 /* Scale.cpp */; settings = {ASSET_TAGS = (); }; };
+		66D462D81BBB37F500FBC7E7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66CD40C71BB226EF003B3399 /* main.cpp */; };
+		66D462DA1BBB37F500FBC7E7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40CB1BB228CD003B3399 /* OpenGL.framework */; };
+		66D462DB1BBB37F500FBC7E7 /* libglfw.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40C91BB2284C003B3399 /* libglfw.3.1.dylib */; };
+		66D462DD1BBB37F500FBC7E7 /* ColorPassthrough.frag in Resources */ = {isa = PBXBuildFile; fileRef = 66D4628D1BBB000E00FBC7E7 /* ColorPassthrough.frag */; };
+		66D462DE1BBB37F500FBC7E7 /* PosColorLocalTransform.vert in Resources */ = {isa = PBXBuildFile; fileRef = 66D4628E1BBB000E00FBC7E7 /* PosColorLocalTransform.vert */; };
+		66D462E41BBB389F00FBC7E7 /* Scale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66D462D31BBB37F100FBC7E7 /* Scale.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -177,6 +184,8 @@
 		66D462AB1BBB0A7F00FBC7E7 /* VertexColors.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = VertexColors.frag; path = Tut02/Shaders/VertexColors.frag; sourceTree = "<group>"; };
 		66D462AC1BBB0A7F00FBC7E7 /* VertexColors.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = VertexColors.vert; path = Tut02/Shaders/VertexColors.vert; sourceTree = "<group>"; };
 		66D462C51BBB283600FBC7E7 /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = info.plist; path = GLFW_gltut/info.plist; sourceTree = "<group>"; };
+		66D462D31BBB37F100FBC7E7 /* Scale.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scale.cpp; path = Tut06/Scale/Scale.cpp; sourceTree = "<group>"; };
+		66D462E21BBB37F500FBC7E7 /* Tutorial 6 Scale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutorial 6 Scale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,17 +351,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		66D462D91BBB37F500FBC7E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66D462DA1BBB37F500FBC7E7 /* OpenGL.framework in Frameworks */,
+				66D462DB1BBB37F500FBC7E7 /* libglfw.3.1.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		669109961BB321430015A8DA /* Chapter 2 */ = {
+		669109961BB321430015A8DA /* Chapter 02 Playing with Colors */ = {
 			isa = PBXGroup;
 			children = (
 				66D462951BBB09F700FBC7E7 /* Shaders */,
 				669109971BB321AC0015A8DA /* FragPosition */,
 				669109981BB321B70015A8DA /* VertexColors */,
 			);
-			name = "Chapter 2";
+			name = "Chapter 02 Playing with Colors";
 			sourceTree = "<group>";
 		};
 		669109971BB321AC0015A8DA /* FragPosition */ = {
@@ -371,7 +389,7 @@
 			name = VertexColors;
 			sourceTree = "<group>";
 		};
-		669109A51BB4A3B90015A8DA /* Chapter 3 */ = {
+		669109A51BB4A3B90015A8DA /* Chapter 03 OpenGLs Moving Triangle */ = {
 			isa = PBXGroup;
 			children = (
 				66D462961BBB09FF00FBC7E7 /* Shaders */,
@@ -380,7 +398,7 @@
 				669109B81BB5DD160015A8DA /* Vertex Calculate Offset */,
 				669109BF1BB5E0B70015A8DA /* Fragment Change Color */,
 			);
-			name = "Chapter 3";
+			name = "Chapter 03 OpenGLs Moving Triangle";
 			sourceTree = "<group>";
 		};
 		669109A61BB586C00015A8DA /* CPU Position Offset */ = {
@@ -415,7 +433,7 @@
 			name = "Fragment Change Color";
 			sourceTree = "<group>";
 		};
-		66910A861BB855BA0015A8DA /* Chapter 4 */ = {
+		66910A861BB855BA0015A8DA /* Chapter 04 Objects at Rest */ = {
 			isa = PBXGroup;
 			children = (
 				66D462941BBB09EA00FBC7E7 /* Shaders */,
@@ -424,7 +442,7 @@
 				66D461A11BB8A46E00FBC7E7 /* Matrix Perspective */,
 				66D461BA1BB8A8ED00FBC7E7 /* Aspect Ratio */,
 			);
-			name = "Chapter 4";
+			name = "Chapter 04 Objects at Rest";
 			sourceTree = "<group>";
 		};
 		66910A871BB855C90015A8DA /* Orthographic Cube */ = {
@@ -467,6 +485,7 @@
 				66D4624B1BB9EB0D00FBC7E7 /* Tutorial 5 Depth Clamping.app */,
 				66D462721BBA060400FBC7E7 /* Tutorial 5 Depth Fighting.app */,
 				66D462881BBAFFCF00FBC7E7 /* Tutorial 6 Translation.app */,
+				66D462E21BBB37F500FBC7E7 /* Tutorial 6 Scale.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -474,25 +493,36 @@
 		66CD40B51BB2269F003B3399 /* GLFW_gltut */ = {
 			isa = PBXGroup;
 			children = (
-				66CD40D01BB312B6003B3399 /* Chapter 1 */,
-				669109961BB321430015A8DA /* Chapter 2 */,
-				669109A51BB4A3B90015A8DA /* Chapter 3 */,
-				66910A861BB855BA0015A8DA /* Chapter 4 */,
-				66D461D31BB8B72E00FBC7E7 /* Chapter 5 */,
-				66D462771BBA0B1600FBC7E7 /* Chapter 6 */,
+				66CD40D01BB312B6003B3399 /* Chapter 01 Hello Triangle */,
+				669109961BB321430015A8DA /* Chapter 02 Playing with Colors */,
+				669109A51BB4A3B90015A8DA /* Chapter 03 OpenGLs Moving Triangle */,
+				66910A861BB855BA0015A8DA /* Chapter 04 Objects at Rest */,
+				66D461D31BB8B72E00FBC7E7 /* Chapter 05 Objects in Depth */,
+				66D462771BBA0B1600FBC7E7 /* Chapter 06 Objects in Motion */,
+				66D462C81BBB36AD00FBC7E7 /* Chapter 07 World in Motion */,
+				66D462C91BBB36B800FBC7E7 /* Chapter 08 Getting Oriented */,
+				66D462CA1BBB36BD00FBC7E7 /* Chapter 09 Lights on */,
+				66D462CB1BBB36C000FBC7E7 /* Chapter 10 Plane Lights */,
+				66D462CC1BBB36C300FBC7E7 /* Chapter 11 Shinies */,
+				66D462D21BBB376700FBC7E7 /* Chapter 12 Dynamic Range */,
+				66D462D11BBB376500FBC7E7 /* Chapter 13 Impostors */,
+				66D462D01BBB376300FBC7E7 /* Chapter 14 Textures Are Not Pictures */,
+				66D462CF1BBB376100FBC7E7 /* Chapter 15 Many Images */,
+				66D462CE1BBB375E00FBC7E7 /* Chapter 16 Gamma and Textures */,
+				66D462CD1BBB375B00FBC7E7 /* Chapter 17 Spotlight on Textures */,
 				66CD40C71BB226EF003B3399 /* main.cpp */,
-				66CD40CE1BB312AC003B3399 /* Scene.h */,
 				66CD40D31BB31D90003B3399 /* helpers.h */,
+				66CD40CE1BB312AC003B3399 /* Scene.h */,
 			);
 			path = GLFW_gltut;
 			sourceTree = "<group>";
 		};
-		66CD40D01BB312B6003B3399 /* Chapter 1 */ = {
+		66CD40D01BB312B6003B3399 /* Chapter 01 Hello Triangle */ = {
 			isa = PBXGroup;
 			children = (
 				66CD40D11BB3131E003B3399 /* Tut1.cpp */,
 			);
-			name = "Chapter 1";
+			name = "Chapter 01 Hello Triangle";
 			sourceTree = "<group>";
 		};
 		66D461881BB896CD00FBC7E7 /* Shader Perspective */ = {
@@ -519,7 +549,7 @@
 			name = "Aspect Ratio";
 			sourceTree = "<group>";
 		};
-		66D461D31BB8B72E00FBC7E7 /* Chapter 5 */ = {
+		66D461D31BB8B72E00FBC7E7 /* Chapter 05 Objects in Depth */ = {
 			isa = PBXGroup;
 			children = (
 				66D462511BBA05B700FBC7E7 /* Shaders */,
@@ -530,7 +560,7 @@
 				66D462371BB9EAA000FBC7E7 /* Depth Clamping */,
 				66D462501BBA052D00FBC7E7 /* Depth Fighting */,
 			);
-			name = "Chapter 5";
+			name = "Chapter 05 Objects in Depth";
 			sourceTree = "<group>";
 		};
 		66D461D41BB8BF0900FBC7E7 /* Overlap No Depth */ = {
@@ -590,13 +620,14 @@
 			name = Shaders;
 			sourceTree = "<group>";
 		};
-		66D462771BBA0B1600FBC7E7 /* Chapter 6 */ = {
+		66D462771BBA0B1600FBC7E7 /* Chapter 06 Objects in Motion */ = {
 			isa = PBXGroup;
 			children = (
 				66D4628B1BBB000400FBC7E7 /* Shaders */,
 				66D462781BBAFF9D00FBC7E7 /* Translation */,
+				66D462C71BBB362000FBC7E7 /* Scale */,
 			);
-			name = "Chapter 6";
+			name = "Chapter 06 Objects in Motion";
 			sourceTree = "<group>";
 		};
 		66D462781BBAFF9D00FBC7E7 /* Translation */ = {
@@ -649,6 +680,91 @@
 				66D462A31BBB0A7400FBC7E7 /* standard.vert */,
 			);
 			name = Shaders;
+			sourceTree = "<group>";
+		};
+		66D462C71BBB362000FBC7E7 /* Scale */ = {
+			isa = PBXGroup;
+			children = (
+				66D462D31BBB37F100FBC7E7 /* Scale.cpp */,
+			);
+			name = Scale;
+			sourceTree = "<group>";
+		};
+		66D462C81BBB36AD00FBC7E7 /* Chapter 07 World in Motion */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 07 World in Motion";
+			sourceTree = "<group>";
+		};
+		66D462C91BBB36B800FBC7E7 /* Chapter 08 Getting Oriented */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 08 Getting Oriented";
+			sourceTree = "<group>";
+		};
+		66D462CA1BBB36BD00FBC7E7 /* Chapter 09 Lights on */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 09 Lights on";
+			sourceTree = "<group>";
+		};
+		66D462CB1BBB36C000FBC7E7 /* Chapter 10 Plane Lights */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 10 Plane Lights";
+			sourceTree = "<group>";
+		};
+		66D462CC1BBB36C300FBC7E7 /* Chapter 11 Shinies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 11 Shinies";
+			sourceTree = "<group>";
+		};
+		66D462CD1BBB375B00FBC7E7 /* Chapter 17 Spotlight on Textures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 17 Spotlight on Textures";
+			sourceTree = "<group>";
+		};
+		66D462CE1BBB375E00FBC7E7 /* Chapter 16 Gamma and Textures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 16 Gamma and Textures";
+			sourceTree = "<group>";
+		};
+		66D462CF1BBB376100FBC7E7 /* Chapter 15 Many Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 15 Many Images";
+			sourceTree = "<group>";
+		};
+		66D462D01BBB376300FBC7E7 /* Chapter 14 Textures Are Not Pictures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 14 Textures Are Not Pictures";
+			sourceTree = "<group>";
+		};
+		66D462D11BBB376500FBC7E7 /* Chapter 13 Impostors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 13 Impostors";
+			sourceTree = "<group>";
+		};
+		66D462D21BBB376700FBC7E7 /* Chapter 12 Dynamic Range */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 12 Dynamic Range";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -960,6 +1076,23 @@
 			productReference = 66D462881BBAFFCF00FBC7E7 /* Tutorial 6 Translation.app */;
 			productType = "com.apple.product-type.application";
 		};
+		66D462D51BBB37F500FBC7E7 /* Tutorial 6 Scale */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66D462DF1BBB37F500FBC7E7 /* Build configuration list for PBXNativeTarget "Tutorial 6 Scale" */;
+			buildPhases = (
+				66D462D61BBB37F500FBC7E7 /* Sources */,
+				66D462D91BBB37F500FBC7E7 /* Frameworks */,
+				66D462DC1BBB37F500FBC7E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tutorial 6 Scale";
+			productName = GLFW_gltut;
+			productReference = 66D462E21BBB37F500FBC7E7 /* Tutorial 6 Scale.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1005,6 +1138,7 @@
 				66D4623E1BB9EB0D00FBC7E7 /* Tutorial 5 Depth Clamping */,
 				66D462651BBA060400FBC7E7 /* Tutorial 5 Depth Fighting */,
 				66D4627B1BBAFFCF00FBC7E7 /* Tutorial 6 Translation */,
+				66D462D51BBB37F500FBC7E7 /* Tutorial 6 Scale */,
 			);
 		};
 /* End PBXProject section */
@@ -1171,6 +1305,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		66D462DC1BBB37F500FBC7E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66D462DD1BBB37F500FBC7E7 /* ColorPassthrough.frag in Resources */,
+				66D462DE1BBB37F500FBC7E7 /* PosColorLocalTransform.vert in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1241,6 +1384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66D462D41BBB37F100FBC7E7 /* Scale.cpp in Sources */,
 				669109C81BB5F22A0015A8DA /* Tut1.cpp in Sources */,
 				669109C91BB5F22A0015A8DA /* main.cpp in Sources */,
 			);
@@ -1333,6 +1477,15 @@
 			files = (
 				66D4628A1BBAFFF500FBC7E7 /* Translation.cpp in Sources */,
 				66D4627E1BBAFFCF00FBC7E7 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66D462D61BBB37F500FBC7E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66D462E41BBB389F00FBC7E7 /* Scale.cpp in Sources */,
+				66D462D81BBB37F500FBC7E7 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1994,6 +2147,38 @@
 			};
 			name = Release;
 		};
+		66D462E01BBB37F500FBC7E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				HEADER_SEARCH_PATHS = /opt/local/include;
+				INFOPLIST_FILE = "$(SRCROOT)/GLFW_gltut/info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = /opt/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fakeurl.GLFW_gltut;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		66D462E11BBB37F500FBC7E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				HEADER_SEARCH_PATHS = /opt/local/include;
+				INFOPLIST_FILE = "$(SRCROOT)/GLFW_gltut/info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = /opt/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fakeurl.GLFW_gltut;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2164,6 +2349,15 @@
 			buildConfigurations = (
 				66D462861BBAFFCF00FBC7E7 /* Debug */,
 				66D462871BBAFFCF00FBC7E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66D462DF1BBB37F500FBC7E7 /* Build configuration list for PBXNativeTarget "Tutorial 6 Scale" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66D462E01BBB37F500FBC7E7 /* Debug */,
+				66D462E11BBB37F500FBC7E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

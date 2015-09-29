@@ -5,19 +5,19 @@ const char *tutorialName = "Tutorial 05 Depth Clamping";
 
 const int numberOfVertices = 36;
 
-#define RIGHT_EXTENT 0.8f
-#define LEFT_EXTENT -RIGHT_EXTENT
-#define TOP_EXTENT 0.20f
-#define MIDDLE_EXTENT 0.0f
+#define RIGHT_EXTENT   0.8f
+#define LEFT_EXTENT   -RIGHT_EXTENT
+#define TOP_EXTENT     0.20f
+#define MIDDLE_EXTENT  0.0f
 #define BOTTOM_EXTENT -TOP_EXTENT
-#define FRONT_EXTENT -1.25f
-#define REAR_EXTENT -1.75f
+#define FRONT_EXTENT  -1.25f
+#define REAR_EXTENT   -1.75f
 
 #define GREEN_COLOR 0.75f, 0.75f, 1.0f, 1.0f
-#define BLUE_COLOR 	0.0f, 0.5f, 0.0f, 1.0f
-#define RED_COLOR 1.0f, 0.0f, 0.0f, 1.0f
-#define GREY_COLOR 0.8f, 0.8f, 0.8f, 1.0f
-#define BROWN_COLOR 0.5f, 0.5f, 0.0f, 1.0f
+#define BLUE_COLOR 	0.0f,  0.5f,  0.0f, 1.0f
+#define RED_COLOR   1.0f,  0.0f,  0.0f, 1.0f
+#define GREY_COLOR  0.8f,  0.8f,  0.8f, 1.0f
+#define BROWN_COLOR 0.5f,  0.5f,  0.0f, 1.0f
 
 const float vertexData[] = {
     //Object 1 positions
@@ -43,9 +43,6 @@ const float vertexData[] = {
     LEFT_EXTENT,	TOP_EXTENT,		REAR_EXTENT,
     RIGHT_EXTENT,	TOP_EXTENT,		REAR_EXTENT,
     RIGHT_EXTENT,	BOTTOM_EXTENT,	REAR_EXTENT,
-    
-    //	0, 2, 1,
-    //	3, 2, 0,
     
     //Object 2 positions
     TOP_EXTENT,		RIGHT_EXTENT,	REAR_EXTENT,
@@ -133,7 +130,6 @@ const GLshort indexData[] =
     
     14, 16, 15,
     17, 16, 14,
-    
 };
 
 GLuint vertexBufferObject;

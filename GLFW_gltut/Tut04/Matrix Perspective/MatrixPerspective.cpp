@@ -52,9 +52,6 @@ const float vertexData[] = {
     -0.25f, -0.25f, -2.75f, 1.0f,
     -0.25f, -0.25f, -1.25f, 1.0f,
     
-    
-    
-    
     0.0f, 0.0f, 1.0f, 1.0f,
     0.0f, 0.0f, 1.0f, 1.0f,
     0.0f, 0.0f, 1.0f, 1.0f,
@@ -102,8 +99,6 @@ const float vertexData[] = {
     0.0f, 1.0f, 1.0f, 1.0f,
     0.0f, 1.0f, 1.0f, 1.0f,
     0.0f, 1.0f, 1.0f, 1.0f,
-    
-    
 };
 
 GLuint vertexBufferObject;
