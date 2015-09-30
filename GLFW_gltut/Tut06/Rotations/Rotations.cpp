@@ -121,7 +121,7 @@ glm::mat3 RotateZ(float elapsedTime)
     return theMat;
 }
 
-glm::mat3 RotateAxis(float elapsedTime)
+glm::mat3 RotateAllAxis(float elapsedTime)
 {
     float angRad = ComputeAngleRad(elapsedTime, 2.0);
     float cos = cosf(angRad);
@@ -175,11 +175,11 @@ struct Instance
 
 Instance g_instanceList[] =
 {
-    {NullRotation, glm::vec3( 0.0f,  0.0f, -25.0f)},
-    {RotateX,      glm::vec3(-5.0f, -5.0f, -25.0f)},
-    {RotateY,      glm::vec3(-5.0f,  5.0f, -25.0f)},
-    {RotateZ,      glm::vec3( 5.0f,  5.0f, -25.0f)},
-    {RotateAxis,   glm::vec3( 5.0f, -5.0f, -25.0f)},
+    {NullRotation,  glm::vec3( 0.0f,  0.0f, -25.0f)},
+    {RotateX,       glm::vec3(-5.0f, -5.0f, -25.0f)},
+    {RotateY,       glm::vec3(-5.0f,  5.0f, -25.0f)},
+    {RotateZ,       glm::vec3( 5.0f,  5.0f, -25.0f)},
+    {RotateAllAxis, glm::vec3( 5.0f, -5.0f, -25.0f)},
 };
 
 float CalcFrustumScale(float fovDeg)
