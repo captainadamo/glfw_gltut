@@ -14,7 +14,7 @@ const int numberOfVertices = 36;
 #define REAR_EXTENT   -1.75f
 
 #define GREEN_COLOR 0.75f, 0.75f, 1.0f, 1.0f
-#define BLUE_COLOR 	0.0f,  0.5f,  0.0f, 1.0f
+#define BLUE_COLOR  0.0f,  0.5f,  0.0f, 1.0f
 #define RED_COLOR   1.0f,  0.0f,  0.0f, 1.0f
 #define GREY_COLOR  0.8f,  0.8f,  0.8f, 1.0f
 #define BROWN_COLOR 0.5f,  0.5f,  0.0f, 1.0f
@@ -121,13 +121,13 @@ const GLshort indexData[] =
 {
     0, 2, 1,
     3, 2, 0,
-
+    
     4, 5, 6,
     6, 7, 4,
-
+    
     8, 9, 10,
     11, 13, 12,
-
+    
     14, 16, 15,
     17, 16, 14,
 };

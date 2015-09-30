@@ -7,98 +7,98 @@ const float vertexData[] = {
      0.25f,  0.25f, -1.25f, 1.0f,
      0.25f, -0.25f, -1.25f, 1.0f,
     -0.25f,  0.25f, -1.25f, 1.0f,
-    
+
      0.25f, -0.25f, -1.25f, 1.0f,
     -0.25f, -0.25f, -1.25f, 1.0f,
     -0.25f,  0.25f, -1.25f, 1.0f,
-    
+
      0.25f,  0.25f, -2.75f, 1.0f,
     -0.25f,  0.25f, -2.75f, 1.0f,
      0.25f, -0.25f, -2.75f, 1.0f,
-    
+
      0.25f, -0.25f, -2.75f, 1.0f,
     -0.25f,  0.25f, -2.75f, 1.0f,
     -0.25f, -0.25f, -2.75f, 1.0f,
-    
+
     -0.25f,  0.25f, -1.25f, 1.0f,
     -0.25f, -0.25f, -1.25f, 1.0f,
     -0.25f, -0.25f, -2.75f, 1.0f,
-    
+
     -0.25f,  0.25f, -1.25f, 1.0f,
     -0.25f, -0.25f, -2.75f, 1.0f,
     -0.25f,  0.25f, -2.75f, 1.0f,
-    
+
      0.25f,  0.25f, -1.25f, 1.0f,
      0.25f, -0.25f, -2.75f, 1.0f,
      0.25f, -0.25f, -1.25f, 1.0f,
-    
+
      0.25f,  0.25f, -1.25f, 1.0f,
      0.25f,  0.25f, -2.75f, 1.0f,
      0.25f, -0.25f, -2.75f, 1.0f,
-    
+
      0.25f,  0.25f, -2.75f, 1.0f,
      0.25f,  0.25f, -1.25f, 1.0f,
     -0.25f,  0.25f, -1.25f, 1.0f,
-    
+
      0.25f,  0.25f, -2.75f, 1.0f,
     -0.25f,  0.25f, -1.25f, 1.0f,
     -0.25f,  0.25f, -2.75f, 1.0f,
-    
+
      0.25f, -0.25f, -2.75f, 1.0f,
     -0.25f, -0.25f, -1.25f, 1.0f,
      0.25f, -0.25f, -1.25f, 1.0f,
-    
+
      0.25f, -0.25f, -2.75f, 1.0f,
     -0.25f, -0.25f, -2.75f, 1.0f,
     -0.25f, -0.25f, -1.25f, 1.0f,
-    
-    0.0f, 0.0f, 1.0f, 1.0f,
-    0.0f, 0.0f, 1.0f, 1.0f,
-    0.0f, 0.0f, 1.0f, 1.0f,
-    
-    0.0f, 0.0f, 1.0f, 1.0f,
-    0.0f, 0.0f, 1.0f, 1.0f,
-    0.0f, 0.0f, 1.0f, 1.0f,
-    
-    0.8f, 0.8f, 0.8f, 1.0f,
-    0.8f, 0.8f, 0.8f, 1.0f,
-    0.8f, 0.8f, 0.8f, 1.0f,
-    
-    0.8f, 0.8f, 0.8f, 1.0f,
-    0.8f, 0.8f, 0.8f, 1.0f,
-    0.8f, 0.8f, 0.8f, 1.0f,
-    
-    0.0f, 1.0f, 0.0f, 1.0f,
-    0.0f, 1.0f, 0.0f, 1.0f,
-    0.0f, 1.0f, 0.0f, 1.0f,
-    
-    0.0f, 1.0f, 0.0f, 1.0f,
-    0.0f, 1.0f, 0.0f, 1.0f,
-    0.0f, 1.0f, 0.0f, 1.0f,
-    
-    0.5f, 0.5f, 0.0f, 1.0f,
-    0.5f, 0.5f, 0.0f, 1.0f,
-    0.5f, 0.5f, 0.0f, 1.0f,
-    
-    0.5f, 0.5f, 0.0f, 1.0f,
-    0.5f, 0.5f, 0.0f, 1.0f,
-    0.5f, 0.5f, 0.0f, 1.0f,
-    
-    1.0f, 0.0f, 0.0f, 1.0f,
-    1.0f, 0.0f, 0.0f, 1.0f,
-    1.0f, 0.0f, 0.0f, 1.0f,
-    
-    1.0f, 0.0f, 0.0f, 1.0f,
-    1.0f, 0.0f, 0.0f, 1.0f,
-    1.0f, 0.0f, 0.0f, 1.0f,
-    
-    0.0f, 1.0f, 1.0f, 1.0f,
-    0.0f, 1.0f, 1.0f, 1.0f,
-    0.0f, 1.0f, 1.0f, 1.0f,
-    
-    0.0f, 1.0f, 1.0f, 1.0f,
-    0.0f, 1.0f, 1.0f, 1.0f,
-    0.0f, 1.0f, 1.0f, 1.0f,
+
+     0.0f,   0.0f,   1.0f,  1.0f,
+     0.0f,   0.0f,   1.0f,  1.0f,
+     0.0f,   0.0f,   1.0f,  1.0f,
+
+     0.0f,   0.0f,   1.0f,  1.0f,
+     0.0f,   0.0f,   1.0f,  1.0f,
+     0.0f,   0.0f,   1.0f,  1.0f,
+
+     0.8f,   0.8f,   0.8f,  1.0f,
+     0.8f,   0.8f,   0.8f,  1.0f,
+     0.8f,   0.8f,   0.8f,  1.0f,
+
+     0.8f,   0.8f,   0.8f,  1.0f,
+     0.8f,   0.8f,   0.8f,  1.0f,
+     0.8f,   0.8f,   0.8f,  1.0f,
+
+     0.0f,   1.0f,   0.0f,  1.0f,
+     0.0f,   1.0f,   0.0f,  1.0f,
+     0.0f,   1.0f,   0.0f,  1.0f,
+
+     0.0f,   1.0f,   0.0f,  1.0f,
+     0.0f,   1.0f,   0.0f,  1.0f,
+     0.0f,   1.0f,   0.0f,  1.0f,
+
+     0.5f,   0.5f,   0.0f,  1.0f,
+     0.5f,   0.5f,   0.0f,  1.0f,
+     0.5f,   0.5f,   0.0f,  1.0f,
+
+     0.5f,   0.5f,   0.0f,  1.0f,
+     0.5f,   0.5f,   0.0f,  1.0f,
+     0.5f,   0.5f,   0.0f,  1.0f,
+
+     1.0f,   0.0f,   0.0f,  1.0f,
+     1.0f,   0.0f,   0.0f,  1.0f,
+     1.0f,   0.0f,   0.0f,  1.0f,
+
+     1.0f,   0.0f,   0.0f,  1.0f,
+     1.0f,   0.0f,   0.0f,  1.0f,
+     1.0f,   0.0f,   0.0f,  1.0f,
+
+     0.0f,   1.0f,   1.0f,  1.0f,
+     0.0f,   1.0f,   1.0f,  1.0f,
+     0.0f,   1.0f,   1.0f,  1.0f,
+
+     0.0f,   1.0f,   1.0f,  1.0f,
+     0.0f,   1.0f,   1.0f,  1.0f,
+     0.0f,   1.0f,   1.0f,  1.0f,
 };
 
 GLuint vertexBufferObject;
@@ -117,7 +117,7 @@ void onFramebufferResize(GLFWwindow* window, int width, int height)
 void InitializeVertexBuffer()
 {
     glGenBuffers(1, &vertexBufferObject);
-    
+
     glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -126,33 +126,33 @@ void InitializeVertexBuffer()
 void InitializeProgram()
 {
     std::vector<GLuint> shaderList;
-    
+
     shaderList.push_back(LoadShader(GL_VERTEX_SHADER, "MatrixPerspective.vert"));
     shaderList.push_back(LoadShader(GL_FRAGMENT_SHADER, "StandardColors.frag"));
-    
+
     theProgram = CreateProgram(shaderList);
-    
+
     offsetUniform = glGetUniformLocation(theProgram, "offset");
-    
+
     perspectiveMatrixUnif = glGetUniformLocation(theProgram, "perspectiveMatrix");
-    
+
     float frustumScale = 1.0f;
     float zNear = .5f;
     float zFar = 3.0f;
-    
+
     float theMatrix[16];
     memset(theMatrix, 0, sizeof(float) * 16);
-    
+
     theMatrix[0] = frustumScale;
     theMatrix[5] = frustumScale;
     theMatrix[10] = (zFar + zNear) / (zNear - zFar);
     theMatrix[14] = (2 *zFar * zNear) / (zNear - zFar);
     theMatrix[11] = -1.0f;
-    
+
     glUseProgram(theProgram);
     glUniformMatrix4fv(perspectiveMatrixUnif, 1, GL_FALSE, theMatrix);
     glUseProgram(0);
-    
+
     std::for_each(shaderList.begin(), shaderList.end(), glDeleteShader);
 }
 
@@ -160,10 +160,10 @@ void init()
 {
     InitializeProgram();
     InitializeVertexBuffer();
-    
+
     glGenVertexArrays(1, &vao);
     glBindVertexArray(vao);
-    
+
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
     glFrontFace(GL_CW);
@@ -173,20 +173,20 @@ void display()
 {
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT);
-    
+
     glUseProgram(theProgram);
-    
+
     glUniform2f(offsetUniform, 0.5f, 0.5f);
-    
+
     size_t colorData = sizeof(vertexData) / 2;
     glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 0, 0);
     glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 0, (void*)colorData);
-    
+
     glDrawArrays(GL_TRIANGLES, 0, 36);
-    
+
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(1);
     glUseProgram(0);
