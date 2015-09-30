@@ -8,7 +8,7 @@ const char *tutorialName = "Tutorial 06 Scale";
 const int numberOfVertices = 8;
 
 #define GREEN_COLOR 0.0f, 1.0f, 0.0f, 1.0f
-#define BLUE_COLOR 	0.0f, 0.0f, 1.0f, 1.0f
+#define BLUE_COLOR  0.0f, 0.0f, 1.0f, 1.0f
 #define RED_COLOR   1.0f, 0.0f, 0.0f, 1.0f
 #define GREY_COLOR  0.8f, 0.8f, 0.8f, 1.0f
 #define BROWN_COLOR 0.5f, 0.5f, 0.0f, 1.0f
@@ -97,7 +97,6 @@ glm::vec3 DynamicNonUniformScale(float elapsedTime)
     return glm::vec3(glm::mix(1.0f, 0.5f, CalcLerpFactor(elapsedTime, xLoopDuration)),
                      1.0f,
                      glm::mix(1.0f, 10.0f, CalcLerpFactor(elapsedTime, zLoopDuration)));
-    
 }
 
 struct Instance
