@@ -154,17 +154,15 @@ float delta = 0.0f;
 
 float CalcZOFfset()
 {
+    // To loop uncomment comment and comment out the second ret definition
+    /*
     const float loopDuration = 5.0f;
-
     float elapsedTime = glfwGetTime();
-    
     const float scale = M_PI * 2.0f / loopDuration;
     float currTimeThroughLoop = fmodf(elapsedTime, loopDuration);
-
-    // To loop change the comment out to the second ret definition
-    // float ret = cosf(currTimeThroughLoop * scale) * 500.0f - start;
+    float ret = cosf(currTimeThroughLoop * scale) * 500.0f - start;
+     */
     float ret = delta - start;
-
     return ret;
 }
 
