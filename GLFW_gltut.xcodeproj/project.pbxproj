@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		667913311BBC4C69000DBCCC /* Rotations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 667913301BBC4C69000DBCCC /* Rotations.cpp */; settings = {ASSET_TAGS = (); }; };
 		667913351BBC4CBC000DBCCC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66CD40C71BB226EF003B3399 /* main.cpp */; };
 		667913371BBC4CBC000DBCCC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40CB1BB228CD003B3399 /* OpenGL.framework */; };
 		667913381BBC4CBC000DBCCC /* libglfw.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40C91BB2284C003B3399 /* libglfw.3.1.dylib */; };
@@ -121,7 +120,6 @@
 		66D462C31BBB0B6800FBC7E7 /* MatrixPerspective.vert in Resources */ = {isa = PBXBuildFile; fileRef = 66D462981BBB0A3700FBC7E7 /* MatrixPerspective.vert */; };
 		66D462C41BBB0B6800FBC7E7 /* StandardColors.frag in Resources */ = {isa = PBXBuildFile; fileRef = 66D4629A1BBB0A3700FBC7E7 /* StandardColors.frag */; };
 		66D462C61BBB283600FBC7E7 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66D462C51BBB283600FBC7E7 /* info.plist */; settings = {ASSET_TAGS = (); }; };
-		66D462D41BBB37F100FBC7E7 /* Scale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66D462D31BBB37F100FBC7E7 /* Scale.cpp */; settings = {ASSET_TAGS = (); }; };
 		66D462D81BBB37F500FBC7E7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66CD40C71BB226EF003B3399 /* main.cpp */; };
 		66D462DA1BBB37F500FBC7E7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40CB1BB228CD003B3399 /* OpenGL.framework */; };
 		66D462DB1BBB37F500FBC7E7 /* libglfw.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40C91BB2284C003B3399 /* libglfw.3.1.dylib */; };
@@ -1448,8 +1446,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66D462D41BBB37F100FBC7E7 /* Scale.cpp in Sources */,
-				667913311BBC4C69000DBCCC /* Rotations.cpp in Sources */,
 				669109C81BB5F22A0015A8DA /* Tut1.cpp in Sources */,
 				669109C91BB5F22A0015A8DA /* main.cpp in Sources */,
 			);
