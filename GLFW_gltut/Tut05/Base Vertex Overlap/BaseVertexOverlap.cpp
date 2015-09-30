@@ -5,25 +5,25 @@ const char *tutorialName = "Tutorial 05 Base Vertex With Overlap";
 
 const int numberOfVertices = 36;
 
-#define RIGHT_EXTENT 0.8f
-#define LEFT_EXTENT -RIGHT_EXTENT
-#define TOP_EXTENT 0.20f
-#define MIDDLE_EXTENT 0.0f
+#define RIGHT_EXTENT   0.8f
+#define LEFT_EXTENT   -RIGHT_EXTENT
+#define TOP_EXTENT     0.20f
+#define MIDDLE_EXTENT  0.0f
 #define BOTTOM_EXTENT -TOP_EXTENT
-#define FRONT_EXTENT -1.25f
-#define REAR_EXTENT -1.75f
+#define FRONT_EXTENT  -1.25f
+#define REAR_EXTENT   -1.75f
 
 #define GREEN_COLOR 0.75f, 0.75f, 1.0f, 1.0f
-#define BLUE_COLOR 	0.0f, 0.5f, 0.0f, 1.0f
-#define RED_COLOR 1.0f, 0.0f, 0.0f, 1.0f
-#define GREY_COLOR 0.8f, 0.8f, 0.8f, 1.0f
-#define BROWN_COLOR 0.5f, 0.5f, 0.0f, 1.0f
+#define BLUE_COLOR  0.0f,  0.5f,  0.0f, 1.0f
+#define RED_COLOR   1.0f,  0.0f,  0.0f, 1.0f
+#define GREY_COLOR  0.8f,  0.8f,  0.8f, 1.0f
+#define BROWN_COLOR 0.5f,  0.5f,  0.0f, 1.0f
 
 const float vertexData[] = {
     //Object 1 positions
-    LEFT_EXTENT,	TOP_EXTENT,		REAR_EXTENT,
-    LEFT_EXTENT,	MIDDLE_EXTENT,	FRONT_EXTENT,
-    RIGHT_EXTENT,	MIDDLE_EXTENT,	FRONT_EXTENT,
+    LEFT_EXTENT,    TOP_EXTENT,		REAR_EXTENT,
+    LEFT_EXTENT,    MIDDLE_EXTENT,	FRONT_EXTENT,
+    RIGHT_EXTENT,   MIDDLE_EXTENT,	FRONT_EXTENT,
     RIGHT_EXTENT,	TOP_EXTENT,		REAR_EXTENT,
     
     LEFT_EXTENT,	BOTTOM_EXTENT,	REAR_EXTENT,
