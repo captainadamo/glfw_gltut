@@ -159,10 +159,10 @@ float CalcZOFfset()
 
     float elapsedTime = glfwGetTime();
 
-    float fCurrTimeThroughLoop = fmodf(elapsedTime, loopDuration);
+    float currTimeThroughLoop = fmodf(elapsedTime, loopDuration);
 
     // Uncomment first line to loop
-    //float ret = cosf(fCurrTimeThroughLoop * scale) * 500.0f - start;
+    //float ret = cosf(currTimeThroughLoop * scale) * 500.0f - start;
     float ret = delta - start;
 
     return ret;
@@ -179,8 +179,8 @@ void display()
     glUseProgram(theProgram);
     glBindVertexArray(vao);
 
-    float fZOffset = CalcZOFfset();
-    glUniform3f(offsetUniform, 0.0f, 0.0f, fZOffset);
+    float zOffset = CalcZOFfset();
+    glUniform3f(offsetUniform, 0.0f, 0.0f, zOffset);
     glDrawElements(GL_TRIANGLES, ARRAY_COUNT(indexData), GL_UNSIGNED_SHORT, 0);
 
     glBindVertexArray(0);
@@ -204,18 +204,18 @@ void display()
         {
             for(int x = 0; x < 500; x++)
             {
-                GLuint iValue = *pBufferLoc >> 8;
-                iValue = iValue & 0x00FFFFFF;
+                GLuint value = *pBufferLoc >> 8;
+                value = value & 0x00FFFFFF;
                 
-                if(charMap.find(iValue) == charMap.end())
+                if(charMap.find(value) == charMap.end())
                 {
                     if(charMap.size())
-                        charMap[iValue] = static_cast<char>(65 + charMap.size() - 1);
+                        charMap[value] = static_cast<char>(65 + charMap.size() - 1);
                     else
-                        charMap[iValue] = '.';
+                        charMap[value] = '.';
                 }
 
-                strOutput.push_back(charMap[iValue]);
+                strOutput.push_back(charMap[value]);
                 strOutput.push_back(' ');
 
                 ++pBufferLoc;
@@ -227,13 +227,13 @@ void display()
         delete[] pBuffer;
 
         {
-            static int iFile = 0;
+            static int file = 0;
             std::ostringstream temp;
-            temp << "test" << iFile << ".txt";
+            temp << "test" << file << ".txt";
             std::string strFilename = temp.str();
 
             std::ofstream shaderFile(strFilename.c_str());
-            shaderFile << "Offset: " << fZOffset << std::endl;
+            shaderFile << "Offset: " << zOffset << std::endl;
             for(std::map<GLuint, char>::const_iterator startIt = charMap.begin();
                 startIt != charMap.end();
                 ++startIt)
@@ -245,7 +245,7 @@ void display()
 
             printf("finished\n");
 
-            iFile++;
+            file++;
         }
     }
 }
@@ -256,8 +256,8 @@ void keyStateChanged(int key, int action)
     {
         case GLFW_KEY_SPACE:
         {
-            float fValue = CalcZOFfset();
-            printf("%f\n", fValue);
+            float value = CalcZOFfset();
+            printf("%f\n", value);
             readBuffer = true;
         }
             break;

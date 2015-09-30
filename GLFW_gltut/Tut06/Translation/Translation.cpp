@@ -58,7 +58,7 @@ GLuint cameraToClipMatrixUnif;
 
 glm::mat4 cameraToClipMatrix(0.0f);
 
-glm::vec3 StationaryOffset(float fElapsedTime)
+glm::vec3 StationaryOffset(float elapsedTime)
 {
     return glm::vec3(0.0f, 0.0f, -20.0f);
 }
@@ -80,11 +80,11 @@ glm::vec3 BottomCircleOffset(float elapsedTime)
     const float loopDuration = 12.0f;
     const float scale = M_PI * 2.0f / loopDuration;
 
-    float fCurrTimeThroughLoop = fmodf(elapsedTime, loopDuration);
+    float currTimeThroughLoop = fmodf(elapsedTime, loopDuration);
 
-    return glm::vec3(cosf(fCurrTimeThroughLoop * scale) * 5.f,
+    return glm::vec3(cosf(currTimeThroughLoop * scale) * 5.f,
                      -3.5f,
-                     sinf(fCurrTimeThroughLoop * scale) * 5.f - 20.0f);
+                     sinf(currTimeThroughLoop * scale) * 5.f - 20.0f);
 }
 
 struct Instance
