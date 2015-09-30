@@ -131,7 +131,7 @@ Instance g_instanceList[] =
 
 float CalcFrustumScale(float fovDeg)
 {
-    const float degToRad = 3.14159f * 2.0f / 360.0f;
+    const float degToRad = M_PI * 2.0f / 360.0f;
     float fovRad = fovDeg * degToRad;
     return 1.0f / tan(fovRad / 2.0f);
 }

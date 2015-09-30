@@ -74,7 +74,7 @@ glm::mat3 NullRotation(float elapsedTime)
 
 float ComputeAngleRad(float elapsedTime, float loopDuration)
 {
-    const float scale = 3.14159f * 2.0f / loopDuration;
+    const float scale = M_PI * 2.0f / loopDuration;
     float currTimeThroughLoop = fmodf(elapsedTime, loopDuration);
     return currTimeThroughLoop * scale;
 }
@@ -121,7 +121,7 @@ glm::mat3 RotateZ(float elapsedTime)
     return theMat;
 }
 
-glm::mat3 RotateAllAxis(float elapsedTime)
+glm::mat3 RotateAllAxes(float elapsedTime)
 {
     float angRad = ComputeAngleRad(elapsedTime, 2.0);
     float cos = cosf(angRad);
@@ -179,12 +179,12 @@ Instance g_instanceList[] =
     {RotateX,       glm::vec3(-5.0f, -5.0f, -25.0f)},
     {RotateY,       glm::vec3(-5.0f,  5.0f, -25.0f)},
     {RotateZ,       glm::vec3( 5.0f,  5.0f, -25.0f)},
-    {RotateAllAxis, glm::vec3( 5.0f, -5.0f, -25.0f)},
+    {RotateAllAxes, glm::vec3( 5.0f, -5.0f, -25.0f)},
 };
 
 float CalcFrustumScale(float fovDeg)
 {
-    const float degToRad = 3.14159f * 2.0f / 360.0f;
+    const float degToRad = M_PI * 2.0f / 360.0f;
     float fovRad = fovDeg * degToRad;
     return 1.0f / tan(fovRad / 2.0f);
 }

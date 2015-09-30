@@ -155,7 +155,7 @@ float delta = 0.0f;
 float CalcZOFfset()
 {
     const float loopDuration = 5.0f;
-    const float scale = 3.14159f * 2.0f / loopDuration;
+    const float scale = M_PI * 2.0f / loopDuration;
 
     float elapsedTime = glfwGetTime();
 
