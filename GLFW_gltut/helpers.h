@@ -1,5 +1,5 @@
-#ifndef helpers_h
-#define helpers_h
+#ifndef HELPERS_H
+#define HELPERS_H
 
 #include <cstdlib>
 #include <cstdio>
@@ -94,4 +94,4 @@ GLuint CreateProgram(const std::vector<GLuint> &shaderList)
 }
 
 
-#endif /* helpers_h */
+#endif /* HELPERS_H */

@@ -26,7 +26,6 @@ static const char *strFragmentShader = "#version 330\n"
                                        "}\n";
 
 GLuint positionBufferObject;
-GLuint vao;
 
 void onFramebufferResize(GLFWwindow* window, int width, int height)
 {
