@@ -139,7 +139,6 @@
 		6679133F1BBC4CBC000DBCCC /* Tutorial 6 Rotations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutorial 6 Rotations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		667913501BBC8525000DBCCC /* Tutorial 6 Hierarchy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutorial 6 Hierarchy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		667913521BBC854D000DBCCC /* Hierarchy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Hierarchy.cpp; path = Tut06/Hierarchy/Hierarchy.cpp; sourceTree = "<group>"; };
-		667913561BBC8A05000DBCCC /* MatrixStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatrixStack.h; path = Tut06/Hierarchy/MatrixStack.h; sourceTree = "<group>"; };
 		669109A11BB3222E0015A8DA /* FragPosition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FragPosition.cpp; path = Tut02/FragPosition/FragPosition.cpp; sourceTree = "<group>"; };
 		669109A31BB3224A0015A8DA /* VertexColors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VertexColors.cpp; path = Tut02/VertexColors/VertexColors.cpp; sourceTree = "<group>"; };
 		669109A71BB586E80015A8DA /* cpuPositionOffset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpuPositionOffset.cpp; path = "Tut03/CPU Position/cpuPositionOffset.cpp"; sourceTree = "<group>"; };
@@ -409,7 +408,6 @@
 			isa = PBXGroup;
 			children = (
 				667913521BBC854D000DBCCC /* Hierarchy.cpp */,
-				667913561BBC8A05000DBCCC /* MatrixStack.h */,
 			);
 			name = Hierarchy;
 			sourceTree = "<group>";
