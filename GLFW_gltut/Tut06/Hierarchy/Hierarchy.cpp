@@ -1,5 +1,3 @@
-#include "MatrixStack.h"
-
 #include "Scene.h"
 #include "helpers.h"
 
