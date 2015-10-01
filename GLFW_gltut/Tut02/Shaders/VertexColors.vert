@@ -7,6 +7,6 @@ smooth out vec4 theColor;
 
 void main()
 {
-	gl_Position = position;
-	theColor = color;
+    gl_Position = position;
+    theColor = color;
 }

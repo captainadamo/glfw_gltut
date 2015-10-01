@@ -8,6 +8,7 @@
 #include "GLFW/glfw3.h"
 
 static GLuint theProgram;
+static GLuint vao;
 
 extern const char *tutorialName;
 

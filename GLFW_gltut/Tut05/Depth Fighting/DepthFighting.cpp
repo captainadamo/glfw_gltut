@@ -7,7 +7,7 @@ const char *tutorialName = "Tutorial 05 Depth Fighting";
 const int numberOfVertices = 8;
 
 #define GREEN_COLOR 0.0f, 1.0f, 0.0f, 1.0f
-#define BLUE_COLOR 	0.0f, 0.0f, 1.0f, 1.0f
+#define BLUE_COLOR  0.0f, 0.0f, 1.0f, 1.0f
 #define RED_COLOR   1.0f, 0.0f, 0.0f, 1.0f
 
 const float Z_OFFSET = 0.5f;
