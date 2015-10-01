@@ -11,7 +11,6 @@ const float vertexPositions[] = {
 };
 
 GLuint positionBufferObject;
-GLuint vao;
 
 void ComputePositionOffsets(float &xOffset, float &yOffset)
 {

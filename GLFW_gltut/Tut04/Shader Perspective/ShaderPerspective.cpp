@@ -102,7 +102,6 @@ const float vertexData[] = {
 };
 
 GLuint vertexBufferObject;
-GLuint vao;
 
 GLuint offsetUniform;
 

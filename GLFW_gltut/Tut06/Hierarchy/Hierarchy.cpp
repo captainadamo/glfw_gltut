@@ -110,7 +110,6 @@ const GLshort indexData[] =
 
 GLuint vertexBufferObject;
 GLuint indexBufferObject;
-GLuint vao;
 
 GLuint positionAttrib;
 GLuint colorAttrib;

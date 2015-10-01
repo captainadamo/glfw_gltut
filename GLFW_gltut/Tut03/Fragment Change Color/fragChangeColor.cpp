@@ -10,7 +10,6 @@ const float vertexPositions[] = {
 };
 
 GLuint positionBufferObject;
-GLuint vao;
 GLuint elapsedTimeUniform;
 
 

@@ -102,7 +102,6 @@ const float vertexData[] = {
 };
 
 GLuint vertexBufferObject;
-GLuint vao;
 GLuint offsetUniform;
 
 void onFramebufferResize(GLFWwindow* window, int width, int height)
