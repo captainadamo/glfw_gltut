@@ -7,5 +7,5 @@ out vec4 outputColor;
 
 void main()
 {
-	outputColor = interpColor * baseColor;
+    outputColor = interpColor * baseColor;
 }
