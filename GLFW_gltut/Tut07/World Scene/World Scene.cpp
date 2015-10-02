@@ -81,11 +81,11 @@ glm::mat4 CalcLookAtMatrix(const glm::vec3 &cameraPt, const glm::vec3 &lookPt, c
 	return rotMat * transMat;
 }
 
-Framework::Mesh *g_pConeMesh = NULL;
-Framework::Mesh *g_pCylinderMesh = NULL;
-Framework::Mesh *g_pCubeTintMesh = NULL;
-Framework::Mesh *g_pCubeColorMesh = NULL;
-Framework::Mesh *g_pPlaneMesh = NULL;
+Framework::Mesh *coneMesh = NULL;
+Framework::Mesh *cylinderMesh = NULL;
+Framework::Mesh *cubeTintMesh = NULL;
+Framework::Mesh *cubeColorMesh = NULL;
+Framework::Mesh *planeMesh = NULL;
 
 //Called after the window and OpenGL are initialized. Called exactly once, before the main loop.
 void init()
@@ -94,11 +94,11 @@ void init()
 
 	try
 	{
-		g_pConeMesh = new Framework::Mesh("UnitConeTint.xml");
-		g_pCylinderMesh = new Framework::Mesh("UnitCylinderTint.xml");
-		g_pCubeTintMesh = new Framework::Mesh("UnitCubeTint.xml");
-		g_pCubeColorMesh = new Framework::Mesh("UnitCubeColor.xml");
-		g_pPlaneMesh = new Framework::Mesh("UnitPlane.xml");
+		coneMesh = new Framework::Mesh("UnitConeTint.xml");
+		cylinderMesh = new Framework::Mesh("UnitCylinderTint.xml");
+		cubeTintMesh = new Framework::Mesh("UnitCubeTint.xml");
+		cubeColorMesh = new Framework::Mesh("UnitCubeColor.xml");
+		planeMesh = new Framework::Mesh("UnitPlane.xml");
 	}
 	catch(std::exception &except)
 	{
@@ -117,23 +117,20 @@ void init()
 	glEnable(GL_DEPTH_CLAMP);
 }
 
-static float g_fYAngle = 0.0f;
-static float g_fXAngle = 0.0f;
-
 //Trees are 3x3 in X/Z, and fTrunkHeight+fConeHeight in the Y.
-void DrawTree(glutil::MatrixStack &modelMatrix, float fTrunkHeight = 2.0f, float fConeHeight = 3.0f)
+void DrawTree(glutil::MatrixStack &modelMatrix, float trunkHeight = 2.0f, float coneHeight = 3.0f)
 {
 	//Draw trunk.
 	{
 		glutil::PushStack push(modelMatrix);
 
-		modelMatrix.Scale(glm::vec3(1.0f, fTrunkHeight, 1.0f));
+		modelMatrix.Scale(glm::vec3(1.0f, trunkHeight, 1.0f));
 		modelMatrix.Translate(glm::vec3(0.0f, 0.5f, 0.0f));
 
 		glUseProgram(UniformColorTint.theProgram);
 		glUniformMatrix4fv(UniformColorTint.modelToWorldMatrixUnif, 1, GL_FALSE, glm::value_ptr(modelMatrix.Top()));
 		glUniform4f(UniformColorTint.baseColorUnif, 0.694f, 0.4f, 0.106f, 1.0f);
-		g_pCylinderMesh->Render();
+		cylinderMesh->Render();
 		glUseProgram(0);
 	}
 
@@ -141,33 +138,33 @@ void DrawTree(glutil::MatrixStack &modelMatrix, float fTrunkHeight = 2.0f, float
 	{
 		glutil::PushStack push(modelMatrix);
 
-		modelMatrix.Translate(glm::vec3(0.0f, fTrunkHeight, 0.0f));
-		modelMatrix.Scale(glm::vec3(3.0f, fConeHeight, 3.0f));
+		modelMatrix.Translate(glm::vec3(0.0f, trunkHeight, 0.0f));
+		modelMatrix.Scale(glm::vec3(3.0f, coneHeight, 3.0f));
 
 		glUseProgram(UniformColorTint.theProgram);
 		glUniformMatrix4fv(UniformColorTint.modelToWorldMatrixUnif, 1, GL_FALSE, glm::value_ptr(modelMatrix.Top()));
 		glUniform4f(UniformColorTint.baseColorUnif, 0.0f, 1.0f, 0.0f, 1.0f);
-		g_pConeMesh->Render();
+		coneMesh->Render();
 		glUseProgram(0);
 	}
 }
 
-const float g_fColumnBaseHeight = 0.25f;
+const float columnBaseHeight = 0.25f;
 
 //Columns are 1x1 in the X/Z, and fHieght units in the Y.
-void DrawColumn(glutil::MatrixStack &modelMatrix, float fHeight = 5.0f)
+void DrawColumn(glutil::MatrixStack &modelMatrix, float height = 5.0f)
 {
 	//Draw the bottom of the column.
 	{
 		glutil::PushStack push(modelMatrix);
 
-		modelMatrix.Scale(glm::vec3(1.0f, g_fColumnBaseHeight, 1.0f));
+		modelMatrix.Scale(glm::vec3(1.0f, columnBaseHeight, 1.0f));
 		modelMatrix.Translate(glm::vec3(0.0f, 0.5f, 0.0f));
 
 		glUseProgram(UniformColorTint.theProgram);
 		glUniformMatrix4fv(UniformColorTint.modelToWorldMatrixUnif, 1, GL_FALSE, glm::value_ptr(modelMatrix.Top()));
 		glUniform4f(UniformColorTint.baseColorUnif, 1.0f, 1.0f, 1.0f, 1.0f);
-		g_pCubeTintMesh->Render();
+		cubeTintMesh->Render();
 		glUseProgram(0);
 	}
 
@@ -175,14 +172,14 @@ void DrawColumn(glutil::MatrixStack &modelMatrix, float fHeight = 5.0f)
 	{
 		glutil::PushStack push(modelMatrix);
 
-		modelMatrix.Translate(glm::vec3(0.0f, fHeight - g_fColumnBaseHeight, 0.0f));
-		modelMatrix.Scale(glm::vec3(1.0f, g_fColumnBaseHeight, 1.0f));
+		modelMatrix.Translate(glm::vec3(0.0f, height - columnBaseHeight, 0.0f));
+		modelMatrix.Scale(glm::vec3(1.0f, columnBaseHeight, 1.0f));
 		modelMatrix.Translate(glm::vec3(0.0f, 0.5f, 0.0f));
 
 		glUseProgram(UniformColorTint.theProgram);
 		glUniformMatrix4fv(UniformColorTint.modelToWorldMatrixUnif, 1, GL_FALSE, glm::value_ptr(modelMatrix.Top()));
 		glUniform4f(UniformColorTint.baseColorUnif, 0.9f, 0.9f, 0.9f, 0.9f);
-		g_pCubeTintMesh->Render();
+		cubeTintMesh->Render();
 		glUseProgram(0);
 	}
 
@@ -190,23 +187,23 @@ void DrawColumn(glutil::MatrixStack &modelMatrix, float fHeight = 5.0f)
 	{
 		glutil::PushStack push(modelMatrix);
 
-		modelMatrix.Translate(glm::vec3(0.0f, g_fColumnBaseHeight, 0.0f));
-		modelMatrix.Scale(glm::vec3(0.8f, fHeight - (g_fColumnBaseHeight * 2.0f), 0.8f));
+		modelMatrix.Translate(glm::vec3(0.0f, columnBaseHeight, 0.0f));
+		modelMatrix.Scale(glm::vec3(0.8f, height - (columnBaseHeight * 2.0f), 0.8f));
 		modelMatrix.Translate(glm::vec3(0.0f, 0.5f, 0.0f));
 
 		glUseProgram(UniformColorTint.theProgram);
 		glUniformMatrix4fv(UniformColorTint.modelToWorldMatrixUnif, 1, GL_FALSE, glm::value_ptr(modelMatrix.Top()));
 		glUniform4f(UniformColorTint.baseColorUnif, 0.9f, 0.9f, 0.9f, 0.9f);
-		g_pCylinderMesh->Render();
+		cylinderMesh->Render();
 		glUseProgram(0);
 	}
 }
 
-const float g_fParthenonWidth = 14.0f;
-const float g_fParthenonLength = 20.0f;
-const float g_fParthenonColumnHeight = 5.0f;
-const float g_fParthenonBaseHeight = 1.0f;
-const float g_fParthenonTopHeight = 2.0f;
+const float parthenonWidth = 14.0f;
+const float parthenonLength = 20.0f;
+const float parthenonColumnHeight = 5.0f;
+const float parthenonBaseHeight = 1.0f;
+const float parthenonTopHeight = 2.0f;
 
 void DrawParthenon(glutil::MatrixStack &modelMatrix)
 {
@@ -214,13 +211,13 @@ void DrawParthenon(glutil::MatrixStack &modelMatrix)
 	{
 		glutil::PushStack push(modelMatrix);
 
-		modelMatrix.Scale(glm::vec3(g_fParthenonWidth, g_fParthenonBaseHeight, g_fParthenonLength));
+		modelMatrix.Scale(glm::vec3(parthenonWidth, parthenonBaseHeight, parthenonLength));
 		modelMatrix.Translate(glm::vec3(0.0f, 0.5f, 0.0f));
 
 		glUseProgram(UniformColorTint.theProgram);
 		glUniformMatrix4fv(UniformColorTint.modelToWorldMatrixUnif, 1, GL_FALSE, glm::value_ptr(modelMatrix.Top()));
 		glUniform4f(UniformColorTint.baseColorUnif, 0.9f, 0.9f, 0.9f, 0.9f);
-		g_pCubeTintMesh->Render();
+		cubeTintMesh->Render();
 		glUseProgram(0);
 	}
 
@@ -228,55 +225,55 @@ void DrawParthenon(glutil::MatrixStack &modelMatrix)
 	{
 		glutil::PushStack push(modelMatrix);
 
-		modelMatrix.Translate(glm::vec3(0.0f, g_fParthenonColumnHeight + g_fParthenonBaseHeight, 0.0f));
-		modelMatrix.Scale(glm::vec3(g_fParthenonWidth, g_fParthenonTopHeight, g_fParthenonLength));
+		modelMatrix.Translate(glm::vec3(0.0f, parthenonColumnHeight + parthenonBaseHeight, 0.0f));
+		modelMatrix.Scale(glm::vec3(parthenonWidth, parthenonTopHeight, parthenonLength));
 		modelMatrix.Translate(glm::vec3(0.0f, 0.5f, 0.0f));
 
 		glUseProgram(UniformColorTint.theProgram);
 		glUniformMatrix4fv(UniformColorTint.modelToWorldMatrixUnif, 1, GL_FALSE, glm::value_ptr(modelMatrix.Top()));
 		glUniform4f(UniformColorTint.baseColorUnif, 0.9f, 0.9f, 0.9f, 0.9f);
-		g_pCubeTintMesh->Render();
+		cubeTintMesh->Render();
 		glUseProgram(0);
 	}
 
 	//Draw columns.
-	const float fFrontZVal = (g_fParthenonLength / 2.0f) - 1.0f;
-	const float fRightXVal = (g_fParthenonWidth / 2.0f) - 1.0f;
+	const float frontZVal = (parthenonLength / 2.0f) - 1.0f;
+	const float rightXVal = (parthenonWidth / 2.0f) - 1.0f;
 
-	for(int iColumnNum = 0; iColumnNum < int(g_fParthenonWidth / 2.0f); iColumnNum++)
+	for(int columnNum = 0; columnNum < int(parthenonWidth / 2.0f); columnNum++)
 	{
 		{
 			glutil::PushStack push(modelMatrix);
-			modelMatrix.Translate(glm::vec3((2.0f * iColumnNum) - (g_fParthenonWidth / 2.0f) + 1.0f,
-				g_fParthenonBaseHeight, fFrontZVal));
+			modelMatrix.Translate(glm::vec3((2.0f * columnNum) - (parthenonWidth / 2.0f) + 1.0f,
+				parthenonBaseHeight, frontZVal));
 
-			DrawColumn(modelMatrix, g_fParthenonColumnHeight);
+			DrawColumn(modelMatrix, parthenonColumnHeight);
 		}
 		{
 			glutil::PushStack push(modelMatrix);
-			modelMatrix.Translate(glm::vec3((2.0f * iColumnNum) - (g_fParthenonWidth / 2.0f) + 1.0f,
-				g_fParthenonBaseHeight, -fFrontZVal));
+			modelMatrix.Translate(glm::vec3((2.0f * columnNum) - (parthenonWidth / 2.0f) + 1.0f,
+				parthenonBaseHeight, -frontZVal));
 
-			DrawColumn(modelMatrix, g_fParthenonColumnHeight);
+			DrawColumn(modelMatrix, parthenonColumnHeight);
 		}
 	}
 
 	//Don't draw the first or last columns, since they've been drawn already.
-	for(int iColumnNum = 1; iColumnNum < int((g_fParthenonLength - 2.0f) / 2.0f); iColumnNum++)
+	for(int columnNum = 1; columnNum < int((parthenonLength - 2.0f) / 2.0f); columnNum++)
 	{
 		{
 			glutil::PushStack push(modelMatrix);
-			modelMatrix.Translate(glm::vec3(fRightXVal,
-				g_fParthenonBaseHeight, (2.0f * iColumnNum) - (g_fParthenonLength / 2.0f) + 1.0f));
+			modelMatrix.Translate(glm::vec3(rightXVal,
+				parthenonBaseHeight, (2.0f * columnNum) - (parthenonLength / 2.0f) + 1.0f));
 
-			DrawColumn(modelMatrix, g_fParthenonColumnHeight);
+			DrawColumn(modelMatrix, parthenonColumnHeight);
 		}
 		{
 			glutil::PushStack push(modelMatrix);
-			modelMatrix.Translate(glm::vec3(-fRightXVal,
-				g_fParthenonBaseHeight, (2.0f * iColumnNum) - (g_fParthenonLength / 2.0f) + 1.0f));
+			modelMatrix.Translate(glm::vec3(-rightXVal,
+				parthenonBaseHeight, (2.0f * columnNum) - (parthenonLength / 2.0f) + 1.0f));
 
-			DrawColumn(modelMatrix, g_fParthenonColumnHeight);
+			DrawColumn(modelMatrix, parthenonColumnHeight);
 		}
 	}
 
@@ -285,13 +282,12 @@ void DrawParthenon(glutil::MatrixStack &modelMatrix)
 		glutil::PushStack push(modelMatrix);
 
 		modelMatrix.Translate(glm::vec3(0.0f, 1.0f, 0.0f));
-		modelMatrix.Scale(glm::vec3(g_fParthenonWidth - 6.0f, g_fParthenonColumnHeight,
-			g_fParthenonLength - 6.0f));
+		modelMatrix.Scale(glm::vec3(parthenonWidth - 6.0f, parthenonColumnHeight, parthenonLength - 6.0f));
 		modelMatrix.Translate(glm::vec3(0.0f, 0.5f, 0.0f));
 
 		glUseProgram(ObjectColor.theProgram);
 		glUniformMatrix4fv(ObjectColor.modelToWorldMatrixUnif, 1, GL_FALSE, glm::value_ptr(modelMatrix.Top()));
-		g_pCubeColorMesh->Render();
+		cubeColorMesh->Render();
 		glUseProgram(0);
 	}
 
@@ -299,29 +295,28 @@ void DrawParthenon(glutil::MatrixStack &modelMatrix)
 	{
 		glutil::PushStack push(modelMatrix);
 
-		modelMatrix.Translate(glm::vec3(
-			0.0f,
-			g_fParthenonColumnHeight + g_fParthenonBaseHeight + (g_fParthenonTopHeight / 2.0f),
-			g_fParthenonLength / 2.0f));
+		modelMatrix.Translate(glm::vec3(0.0f,
+                                        parthenonColumnHeight + parthenonBaseHeight + (parthenonTopHeight / 2.0f),
+                                        parthenonLength / 2.0f));
 		modelMatrix.RotateX(-135.0f);
 		modelMatrix.RotateY(45.0f);
 
 		glUseProgram(ObjectColor.theProgram);
 		glUniformMatrix4fv(ObjectColor.modelToWorldMatrixUnif, 1, GL_FALSE, glm::value_ptr(modelMatrix.Top()));
-		g_pCubeColorMesh->Render();
+		cubeColorMesh->Render();
 		glUseProgram(0);
 	}
 }
 
 struct TreeData
 {
-	float fXPos;
-	float fZPos;
-	float fTrunkHeight;
-	float fConeHeight;
+	float xPos;
+	float zPos;
+	float trunkHeight;
+	float coneHeight;
 };
 
-static const TreeData g_forest[] =
+static const TreeData forest[] =
 {
 	{-45.0f, -40.0f, 2.0f, 3.0f},
 	{-42.0f, -35.0f, 2.0f, 3.0f},
@@ -431,36 +426,36 @@ static const TreeData g_forest[] =
 
 void DrawForest(glutil::MatrixStack &modelMatrix)
 {
-	for(int iTree = 0; iTree < ARRAY_COUNT(g_forest); iTree++)
+	for(int tree = 0; tree < ARRAY_COUNT(forest); tree++)
 	{
-		const TreeData &currTree = g_forest[iTree];
+		const TreeData &currTree = forest[tree];
 
 		glutil::PushStack push(modelMatrix);
-		modelMatrix.Translate(glm::vec3(currTree.fXPos, 0.0f, currTree.fZPos));
-		DrawTree(modelMatrix, currTree.fTrunkHeight, currTree.fConeHeight);
+		modelMatrix.Translate(glm::vec3(currTree.xPos, 0.0f, currTree.zPos));
+		DrawTree(modelMatrix, currTree.trunkHeight, currTree.coneHeight);
 	}
 }
 
-static bool g_bDrawLookatPoint = false;
-static glm::vec3 g_camTarget(0.0f, 0.4f, 0.0f);
+static bool drawLookatPoint = false;
+static glm::vec3 camTarget(0.0f, 0.4f, 0.0f);
 
 //In spherical coordinates.
-static glm::vec3 g_sphereCamRelPos(67.5f, -46.0f, 150.0f);
+static glm::vec3 sphereCamRelPos(67.5f, -46.0f, 150.0f);
 
 glm::vec3 ResolveCamPosition()
 {
 	glutil::MatrixStack tempMat;
 
-	float phi = DegToRad(g_sphereCamRelPos.x);
-	float theta = DegToRad(g_sphereCamRelPos.y + 90.0f);
+	float phi = DegToRad(sphereCamRelPos.x);
+	float theta = DegToRad(sphereCamRelPos.y + 90.0f);
 
-	float fSinTheta = sinf(theta);
-	float fCosTheta = cosf(theta);
-	float fCosPhi = cosf(phi);
-	float fSinPhi = sinf(phi);
+	float sinTheta = sinf(theta);
+	float cosTheta = cosf(theta);
+	float cosPhi = cosf(phi);
+	float sinPhi = sinf(phi);
 
-	glm::vec3 dirToCamera(fSinTheta * fCosPhi, fCosTheta, fSinTheta * fSinPhi);
-	return (dirToCamera * g_sphereCamRelPos.z) + g_camTarget;
+	glm::vec3 dirToCamera(sinTheta * cosPhi, cosTheta, sinTheta * sinPhi);
+	return (dirToCamera * sphereCamRelPos.z) + camTarget;
 }
 
 //Called to update the display.
@@ -470,12 +465,12 @@ void display()
 	glClearDepth(1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	if(g_pConeMesh && g_pCylinderMesh && g_pCubeTintMesh && g_pCubeColorMesh && g_pPlaneMesh)
+	if(coneMesh && cylinderMesh && cubeTintMesh && cubeColorMesh && planeMesh)
 	{
 		const glm::vec3 &camPos = ResolveCamPosition();
 
 		glutil::MatrixStack camMatrix;
-		camMatrix.SetMatrix(CalcLookAtMatrix(camPos, g_camTarget, glm::vec3(0.0f, 1.0f, 0.0f)));
+		camMatrix.SetMatrix(CalcLookAtMatrix(camPos, camTarget, glm::vec3(0.0f, 1.0f, 0.0f)));
 
 		glUseProgram(UniformColor.theProgram);
 		glUniformMatrix4fv(UniformColor.worldToCameraMatrixUnif, 1, GL_FALSE, glm::value_ptr(camMatrix.Top()));
@@ -496,7 +491,7 @@ void display()
 			glUseProgram(UniformColor.theProgram);
 			glUniformMatrix4fv(UniformColor.modelToWorldMatrixUnif, 1, GL_FALSE, glm::value_ptr(modelMatrix.Top()));
 			glUniform4f(UniformColor.baseColorUnif, 0.302f, 0.416f, 0.0589f, 1.0f);
-			g_pPlaneMesh->Render();
+			planeMesh->Render();
 			glUseProgram(0);
 		}
 
@@ -511,21 +506,21 @@ void display()
 			DrawParthenon(modelMatrix);
 		}
 
-		if(g_bDrawLookatPoint)
+		if(drawLookatPoint)
 		{
 			glDisable(GL_DEPTH_TEST);
 			glm::mat4 idenity(1.0f);
 
 			glutil::PushStack push(modelMatrix);
 
-			glm::vec3 cameraAimVec = g_camTarget - camPos;
+			glm::vec3 cameraAimVec = camTarget - camPos;
 			modelMatrix.Translate(0.0f, 0.0, -glm::length(cameraAimVec));
 			modelMatrix.Scale(1.0f, 1.0f, 1.0f);
 		
 			glUseProgram(ObjectColor.theProgram);
 			glUniformMatrix4fv(ObjectColor.modelToWorldMatrixUnif, 1, GL_FALSE, glm::value_ptr(modelMatrix.Top()));
 			glUniformMatrix4fv(ObjectColor.worldToCameraMatrixUnif, 1, GL_FALSE, glm::value_ptr(idenity));
-			g_pCubeColorMesh->Render();
+			cubeColorMesh->Render();
 			glUseProgram(0);
 			glEnable(GL_DEPTH_TEST);
 		}
@@ -555,100 +550,100 @@ void keyStateChanged(int key, int mods)
 	switch (key)
 	{
 	case GLFW_KEY_ESCAPE:
-		delete g_pConeMesh;
-		g_pConeMesh = NULL;
-		delete g_pCylinderMesh;
-		g_pCylinderMesh = NULL;
-		delete g_pCubeTintMesh;
-		g_pCubeTintMesh = NULL;
-		delete g_pCubeColorMesh;
-		g_pCubeColorMesh = NULL;
-		delete g_pPlaneMesh;
-		g_pPlaneMesh = NULL;
+		delete coneMesh;
+		coneMesh = NULL;
+		delete cylinderMesh;
+		cylinderMesh = NULL;
+		delete cubeTintMesh;
+		cubeTintMesh = NULL;
+		delete cubeColorMesh;
+		cubeColorMesh = NULL;
+		delete planeMesh;
+		planeMesh = NULL;
 		return;
         case GLFW_KEY_W: {
             if (mods != GLFW_MOD_SHIFT)
-                g_camTarget.z -= 4.0f;
+                camTarget.z -= 4.0f;
             else
-                g_camTarget.z -= 0.4f;
+                camTarget.z -= 0.4f;
         } break;
         case GLFW_KEY_S: {
             if (mods != GLFW_MOD_SHIFT)
-                g_camTarget.z += 4.0f;
+                camTarget.z += 4.0f;
             else
-                g_camTarget.z += 0.4f;
+                camTarget.z += 0.4f;
         } break;
         case GLFW_KEY_D: {
             if (mods != GLFW_MOD_SHIFT)
-                g_camTarget.x += 4.0f;
+                camTarget.x += 4.0f;
             else
-                g_camTarget.x += 0.4f;
+                camTarget.x += 0.4f;
         } break;
         case GLFW_KEY_A: {
             if (mods != GLFW_MOD_SHIFT)
-                g_camTarget.x -= 4.0f;
+                camTarget.x -= 4.0f;
             else
-                g_camTarget.x -= 0.4f;
+                camTarget.x -= 0.4f;
         } break;
         case GLFW_KEY_E: {
             if (mods != GLFW_MOD_SHIFT)
-                g_camTarget.y -= 4.0f;
+                camTarget.y -= 4.0f;
             else
-                g_camTarget.y -= 0.4f;
+                camTarget.y -= 0.4f;
         } break;
         case GLFW_KEY_Q: {
             if (mods != GLFW_MOD_SHIFT)
-                g_camTarget.y += 4.0f;
+                camTarget.y += 4.0f;
             else
-                g_camTarget.y += 0.4f;
+                camTarget.y += 0.4f;
         } break;
         case GLFW_KEY_I: {
             if (mods != GLFW_MOD_SHIFT)
-                g_sphereCamRelPos.y -= 11.25f;
+                sphereCamRelPos.y -= 11.25f;
             else
-                g_sphereCamRelPos.y -= 1.125f;
+                sphereCamRelPos.y -= 1.125f;
         } break;
         case GLFW_KEY_K: {
             if (mods != GLFW_MOD_SHIFT)
-                g_sphereCamRelPos.y += 11.25f;
+                sphereCamRelPos.y += 11.25f;
             else
-                g_sphereCamRelPos.y += 1.125f;
+                sphereCamRelPos.y += 1.125f;
         } break;
         case GLFW_KEY_J: {
             if (mods != GLFW_MOD_SHIFT)
-                g_sphereCamRelPos.x -= 11.25f;
+                sphereCamRelPos.x -= 11.25f;
             else
-                g_sphereCamRelPos.x -= 1.125f;
+                sphereCamRelPos.x -= 1.125f;
         } break;
         case GLFW_KEY_L: {
             if (mods != GLFW_MOD_SHIFT)
-                g_sphereCamRelPos.x += 11.25f;
+                sphereCamRelPos.x += 11.25f;
             else
-                g_sphereCamRelPos.x += 1.125f;
+                sphereCamRelPos.x += 1.125f;
         } break;
         case GLFW_KEY_O: {
             if (mods != GLFW_MOD_SHIFT)
-                g_sphereCamRelPos.z -= 5.0f;
+                sphereCamRelPos.z -= 5.0f;
             else
-                g_sphereCamRelPos.z -= 0.5f;
+                sphereCamRelPos.z -= 0.5f;
         } break;
         case GLFW_KEY_U: {
             if (mods != GLFW_MOD_SHIFT)
-                g_sphereCamRelPos.z += 5.0f;
+                sphereCamRelPos.z += 5.0f;
             else
-                g_sphereCamRelPos.z += 0.5f;
+                sphereCamRelPos.z += 0.5f;
         } break;
 		
 	case GLFW_KEY_SPACE: {
-		g_bDrawLookatPoint = !g_bDrawLookatPoint;
-		printf("Target: %f, %f, %f\n", g_camTarget.x, g_camTarget.y, g_camTarget.z);
-		printf("Position: %f, %f, %f\n", g_sphereCamRelPos.x, g_sphereCamRelPos.y, g_sphereCamRelPos.z);
+		drawLookatPoint = !drawLookatPoint;
+		printf("Target: %f, %f, %f\n", camTarget.x, camTarget.y, camTarget.z);
+		printf("Position: %f, %f, %f\n", sphereCamRelPos.x, sphereCamRelPos.y, sphereCamRelPos.z);
         } break;
 	}
 
-	g_sphereCamRelPos.y = glm::clamp(g_sphereCamRelPos.y, -78.75f, -1.0f);
-	g_camTarget.y = g_camTarget.y > 0.0f ? g_camTarget.y : 0.0f;
-	g_sphereCamRelPos.z = g_sphereCamRelPos.z > 5.0f ? g_sphereCamRelPos.z : 5.0f;
+	sphereCamRelPos.y = glm::clamp(sphereCamRelPos.y, -78.75f, -1.0f);
+	camTarget.y = camTarget.y > 0.0f ? camTarget.y : 0.0f;
+	sphereCamRelPos.z = sphereCamRelPos.z > 5.0f ? sphereCamRelPos.z : 5.0f;
 }
 
 
