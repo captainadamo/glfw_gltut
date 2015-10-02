@@ -17,7 +17,14 @@
 
 #define ARRAY_COUNT( array ) (sizeof( array ) / (sizeof( array[0] ) * (sizeof( array ) != sizeof(void*) || sizeof( array[0] ) <= sizeof(void*))))
 
-GLuint CreateShader(GLenum eShaderType, const char *strFileData)
+
+inline float DegToRad(float angDeg)
+{
+    const float degToRad = M_PI * 2.0f / 360.0f;
+    return angDeg * degToRad;
+}
+
+inline GLuint CreateShader(GLenum eShaderType, const char *strFileData)
 {
     GLuint shader = glCreateShader(eShaderType);
     glShaderSource(shader, 1, &strFileData, NULL);
@@ -49,7 +56,7 @@ GLuint CreateShader(GLenum eShaderType, const char *strFileData)
     return shader;
 }
 
-std::string FindFileOrThrow( const std::string &filename )
+static std::string FindFileOrThrow( const std::string &filename )
 {
     std::ifstream testFile(filename.c_str());
     if(testFile.is_open())
@@ -58,7 +65,7 @@ std::string FindFileOrThrow( const std::string &filename )
     throw std::runtime_error("Could not find the file: " + filename);
 }
 
-GLuint LoadShader(GLenum eShaderType, const char *fileName)
+inline GLuint LoadShader(GLenum eShaderType, const std::string &fileName)
 {
     std::string strFilename = FindFileOrThrow(fileName);
     std::ifstream shaderFile(strFilename);
@@ -70,7 +77,7 @@ GLuint LoadShader(GLenum eShaderType, const char *fileName)
     return CreateShader(eShaderType, shaderData.str().c_str());
 }
 
-GLuint CreateProgram(const std::vector<GLuint> &shaderList)
+inline GLuint CreateProgram(const std::vector<GLuint> &shaderList)
 {
     GLuint program = glCreateProgram();
 

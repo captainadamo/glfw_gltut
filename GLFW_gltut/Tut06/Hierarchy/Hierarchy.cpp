@@ -120,12 +120,6 @@ GLuint cameraToClipMatrixUnif;
 
 glm::mat4 cameraToClipMatrix(0.0f);
 
-static float DegToRad(float angDeg)
-{
-    const float degToRad = M_PI * 2.0f / 360.0f;
-    return angDeg * degToRad;
-}
-
 static inline float Clamp(float value, float minValue, float maxValue)
 {
     if(value < minValue)
@@ -623,49 +617,47 @@ void display()
     g_armature.Draw();
 }
 
-void keyStateChanged(int key, int action)
+void keyStateChanged(int key, int mods)
 {
-    if ( action == GLFW_PRESS ) {
-        switch (key) {
-            case GLFW_KEY_A:
-                g_armature.AdjBase(true);
-                break;
-            case GLFW_KEY_D:
-                g_armature.AdjBase(false);
-                break;
-            case GLFW_KEY_W:
-                g_armature.AdjUpperArm(false);
-                break;
-            case GLFW_KEY_S:
-                g_armature.AdjUpperArm(true);
-                break;
-            case GLFW_KEY_R:
-                g_armature.AdjLowerArm(false);
-                break;
-            case GLFW_KEY_F:
-                g_armature.AdjLowerArm(true);
-                break;
-            case GLFW_KEY_T:
-                g_armature.AdjWristPitch(false);
-                break;
-            case GLFW_KEY_G:
-                g_armature.AdjWristPitch(true);
-                break;
-            case GLFW_KEY_Z:
-                g_armature.AdjWristRoll(true);
-                break;
-            case GLFW_KEY_C:
-                g_armature.AdjWristRoll(false);
-                break;
-            case GLFW_KEY_Q:
-                g_armature.AdjFingerOpen(true);
-                break;
-            case GLFW_KEY_E:
-                g_armature.AdjFingerOpen(false);
-                break;
-            case GLFW_KEY_ENTER:
-                g_armature.WritePose();
-                break;
-        }
+    switch (key) {
+        case GLFW_KEY_A:
+            g_armature.AdjBase(true);
+            break;
+        case GLFW_KEY_D:
+            g_armature.AdjBase(false);
+            break;
+        case GLFW_KEY_W:
+            g_armature.AdjUpperArm(false);
+            break;
+        case GLFW_KEY_S:
+            g_armature.AdjUpperArm(true);
+            break;
+        case GLFW_KEY_R:
+            g_armature.AdjLowerArm(false);
+            break;
+        case GLFW_KEY_F:
+            g_armature.AdjLowerArm(true);
+            break;
+        case GLFW_KEY_T:
+            g_armature.AdjWristPitch(false);
+            break;
+        case GLFW_KEY_G:
+            g_armature.AdjWristPitch(true);
+            break;
+        case GLFW_KEY_Z:
+            g_armature.AdjWristRoll(true);
+            break;
+        case GLFW_KEY_C:
+            g_armature.AdjWristRoll(false);
+            break;
+        case GLFW_KEY_Q:
+            g_armature.AdjFingerOpen(true);
+            break;
+        case GLFW_KEY_E:
+            g_armature.AdjFingerOpen(false);
+            break;
+        case GLFW_KEY_ENTER:
+            g_armature.WritePose();
+            break;
     }
 }

@@ -15,6 +15,6 @@ extern const char *tutorialName;
 void display();
 void init();
 void keyStateChanged(int,int);
-void onFramebufferResize(GLFWwindow*, int, int);
+void onFramebufferResize(GLFWwindow*,int,int);
 
 #endif /* SCENE_H */

@@ -11,9 +11,10 @@
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+        keyStateChanged(key, mods);
         glfwSetWindowShouldClose(window, GL_TRUE);
-    } else if ( action == GLFW_PRESS ) {
-        keyStateChanged(key, action);
+    } else if (action == GLFW_PRESS) {
+        keyStateChanged(key, mods);
     }
 }
 

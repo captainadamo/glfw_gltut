@@ -265,6 +265,6 @@ void display()
     glUseProgram(0);
 }
 
-void keyStateChanged(int key, int action)
+void keyStateChanged(int key, int mods)
 {
 }

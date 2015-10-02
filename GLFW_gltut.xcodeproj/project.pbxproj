@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		662757B01BBDD03700CA5F25 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66CD40C71BB226EF003B3399 /* main.cpp */; };
+		662757B21BBDD03700CA5F25 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40CB1BB228CD003B3399 /* OpenGL.framework */; };
+		662757B31BBDD03700CA5F25 /* libglfw.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40C91BB2284C003B3399 /* libglfw.3.1.dylib */; };
+		662757BC1BBDD04C00CA5F25 /* World Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 662757AB1BBDD03200CA5F25 /* World Scene.cpp */; };
+		662757BD1BBDD0C100CA5F25 /* ColorMultUniform.frag in Resources */ = {isa = PBXBuildFile; fileRef = 662757851BBDD00B00CA5F25 /* ColorMultUniform.frag */; };
+		662757BE1BBDD0C100CA5F25 /* ColorPassthrough.frag in Resources */ = {isa = PBXBuildFile; fileRef = 662757861BBDD00B00CA5F25 /* ColorPassthrough.frag */; };
+		662757BF1BBDD0C100CA5F25 /* ColorUniform.frag in Resources */ = {isa = PBXBuildFile; fileRef = 662757871BBDD00B00CA5F25 /* ColorUniform.frag */; };
+		662757C01BBDD0C100CA5F25 /* PosColorWorldTransform.vert in Resources */ = {isa = PBXBuildFile; fileRef = 6627578C1BBDD00B00CA5F25 /* PosColorWorldTransform.vert */; };
+		662757C11BBDD0C100CA5F25 /* PosColorWorldTransformUBO.vert in Resources */ = {isa = PBXBuildFile; fileRef = 6627578D1BBDD00B00CA5F25 /* PosColorWorldTransformUBO.vert */; };
+		662757C21BBDD0C100CA5F25 /* PosOnlyWorldTransform.vert in Resources */ = {isa = PBXBuildFile; fileRef = 6627578E1BBDD00B00CA5F25 /* PosOnlyWorldTransform.vert */; };
+		662757C41BBDD0C100CA5F25 /* UnitCubeColor.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757931BBDD00B00CA5F25 /* UnitCubeColor.xml */; };
+		662757C51BBDD0C100CA5F25 /* UnitCubeTint.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757941BBDD00B00CA5F25 /* UnitCubeTint.xml */; };
+		662757C61BBDD0C100CA5F25 /* UnitCylinderTint.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757961BBDD00B00CA5F25 /* UnitCylinderTint.xml */; };
+		662757C71BBDD0C100CA5F25 /* UnitPlane.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757971BBDD00B00CA5F25 /* UnitPlane.xml */; };
+		662757CD1BBDD54600CA5F25 /* MatrixStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 662757C91BBDD51E00CA5F25 /* MatrixStack.cpp */; };
+		662757D11BBDD58300CA5F25 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 662757CE1BBDD57400CA5F25 /* Mesh.cpp */; };
+		662757D21BBDD82C00CA5F25 /* UnitConeTint.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757911BBDD00B00CA5F25 /* UnitConeTint.xml */; };
 		667913351BBC4CBC000DBCCC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66CD40C71BB226EF003B3399 /* main.cpp */; };
 		667913371BBC4CBC000DBCCC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40CB1BB228CD003B3399 /* OpenGL.framework */; };
 		667913381BBC4CBC000DBCCC /* libglfw.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40C91BB2284C003B3399 /* libglfw.3.1.dylib */; };
@@ -125,7 +142,6 @@
 		66D462C21BBB0B5900FBC7E7 /* StandardColors.frag in Resources */ = {isa = PBXBuildFile; fileRef = 66D4629A1BBB0A3700FBC7E7 /* StandardColors.frag */; };
 		66D462C31BBB0B6800FBC7E7 /* MatrixPerspective.vert in Resources */ = {isa = PBXBuildFile; fileRef = 66D462981BBB0A3700FBC7E7 /* MatrixPerspective.vert */; };
 		66D462C41BBB0B6800FBC7E7 /* StandardColors.frag in Resources */ = {isa = PBXBuildFile; fileRef = 66D4629A1BBB0A3700FBC7E7 /* StandardColors.frag */; };
-		66D462C61BBB283600FBC7E7 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66D462C51BBB283600FBC7E7 /* info.plist */; settings = {ASSET_TAGS = (); }; };
 		66D462D81BBB37F500FBC7E7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66CD40C71BB226EF003B3399 /* main.cpp */; };
 		66D462DA1BBB37F500FBC7E7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40CB1BB228CD003B3399 /* OpenGL.framework */; };
 		66D462DB1BBB37F500FBC7E7 /* libglfw.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40C91BB2284C003B3399 /* libglfw.3.1.dylib */; };
@@ -135,6 +151,32 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		662757851BBDD00B00CA5F25 /* ColorMultUniform.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ColorMultUniform.frag; path = Tut07/Data/ColorMultUniform.frag; sourceTree = "<group>"; };
+		662757861BBDD00B00CA5F25 /* ColorPassthrough.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ColorPassthrough.frag; path = Tut07/Data/ColorPassthrough.frag; sourceTree = "<group>"; };
+		662757871BBDD00B00CA5F25 /* ColorUniform.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ColorUniform.frag; path = Tut07/Data/ColorUniform.frag; sourceTree = "<group>"; };
+		662757881BBDD00B00CA5F25 /* GenCones.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GenCones.lua; path = Tut07/Data/GenCones.lua; sourceTree = "<group>"; };
+		662757891BBDD00B00CA5F25 /* GenCubes.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GenCubes.lua; path = Tut07/Data/GenCubes.lua; sourceTree = "<group>"; };
+		6627578A1BBDD00B00CA5F25 /* GenCylinders.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GenCylinders.lua; path = Tut07/Data/GenCylinders.lua; sourceTree = "<group>"; };
+		6627578B1BBDD00B00CA5F25 /* GenPlane.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GenPlane.lua; path = Tut07/Data/GenPlane.lua; sourceTree = "<group>"; };
+		6627578C1BBDD00B00CA5F25 /* PosColorWorldTransform.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = PosColorWorldTransform.vert; path = Tut07/Data/PosColorWorldTransform.vert; sourceTree = "<group>"; };
+		6627578D1BBDD00B00CA5F25 /* PosColorWorldTransformUBO.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = PosColorWorldTransformUBO.vert; path = Tut07/Data/PosColorWorldTransformUBO.vert; sourceTree = "<group>"; };
+		6627578E1BBDD00B00CA5F25 /* PosOnlyWorldTransform.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = PosOnlyWorldTransform.vert; path = Tut07/Data/PosOnlyWorldTransform.vert; sourceTree = "<group>"; };
+		6627578F1BBDD00B00CA5F25 /* PosOnlyWorldTransformUBO.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = PosOnlyWorldTransformUBO.vert; path = Tut07/Data/PosOnlyWorldTransformUBO.vert; sourceTree = "<group>"; };
+		662757901BBDD00B00CA5F25 /* UnitCone.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = UnitCone.xml; path = Tut07/Data/UnitCone.xml; sourceTree = "<group>"; };
+		662757911BBDD00B00CA5F25 /* UnitConeTint.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = UnitConeTint.xml; path = Tut07/Data/UnitConeTint.xml; sourceTree = "<group>"; };
+		662757921BBDD00B00CA5F25 /* UnitCube.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = UnitCube.xml; path = Tut07/Data/UnitCube.xml; sourceTree = "<group>"; };
+		662757931BBDD00B00CA5F25 /* UnitCubeColor.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = UnitCubeColor.xml; path = Tut07/Data/UnitCubeColor.xml; sourceTree = "<group>"; };
+		662757941BBDD00B00CA5F25 /* UnitCubeTint.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = UnitCubeTint.xml; path = Tut07/Data/UnitCubeTint.xml; sourceTree = "<group>"; };
+		662757951BBDD00B00CA5F25 /* UnitCylinder.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = UnitCylinder.xml; path = Tut07/Data/UnitCylinder.xml; sourceTree = "<group>"; };
+		662757961BBDD00B00CA5F25 /* UnitCylinderTint.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = UnitCylinderTint.xml; path = Tut07/Data/UnitCylinderTint.xml; sourceTree = "<group>"; };
+		662757971BBDD00B00CA5F25 /* UnitPlane.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = UnitPlane.xml; path = Tut07/Data/UnitPlane.xml; sourceTree = "<group>"; };
+		662757AB1BBDD03200CA5F25 /* World Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "World Scene.cpp"; path = "Tut07/World Scene/World Scene.cpp"; sourceTree = "<group>"; };
+		662757BA1BBDD03700CA5F25 /* Tutorial 7 World Scene.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutorial 7 World Scene.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		662757C91BBDD51E00CA5F25 /* MatrixStack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MatrixStack.cpp; path = glutil/MatrixStack.cpp; sourceTree = "<group>"; };
+		662757CB1BBDD52B00CA5F25 /* glutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = glutil.h; path = glutil/glutil.h; sourceTree = "<group>"; };
+		662757CC1BBDD52B00CA5F25 /* MatrixStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatrixStack.h; path = glutil/MatrixStack.h; sourceTree = "<group>"; };
+		662757CE1BBDD57400CA5F25 /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Mesh.cpp; path = framework/Mesh.cpp; sourceTree = "<group>"; };
+		662757CF1BBDD57400CA5F25 /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mesh.h; path = framework/Mesh.h; sourceTree = "<group>"; };
 		667913301BBC4C69000DBCCC /* Rotations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Rotations.cpp; path = Tut06/Rotations/Rotations.cpp; sourceTree = "<group>"; };
 		6679133F1BBC4CBC000DBCCC /* Tutorial 6 Rotations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutorial 6 Rotations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		667913501BBC8525000DBCCC /* Tutorial 6 Hierarchy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutorial 6 Hierarchy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,7 +201,7 @@
 		66CD40CB1BB228CD003B3399 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		66CD40CE1BB312AC003B3399 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
 		66CD40D11BB3131E003B3399 /* Tut1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tut1.cpp; path = Tut01/Tut1.cpp; sourceTree = "<group>"; };
-		66CD40D31BB31D90003B3399 /* helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
+		66CD40D31BB31D90003B3399 /* helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = helpers.h; path = GLFW_gltut/helpers.h; sourceTree = "<group>"; };
 		66D4618A1BB8973B00FBC7E7 /* ShaderPerspective.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShaderPerspective.cpp; path = "Tut04/Shader Perspective/ShaderPerspective.cpp"; sourceTree = "<group>"; };
 		66D4619C1BB8973F00FBC7E7 /* Tutorial 4 Shader Perspective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutorial 4 Shader Perspective.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D461A21BB8A4B500FBC7E7 /* MatrixPerspective.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MatrixPerspective.cpp; path = "Tut04/Matrix Perspective/MatrixPerspective.cpp"; sourceTree = "<group>"; };
@@ -204,6 +246,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		662757B11BBDD03700CA5F25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662757B21BBDD03700CA5F25 /* OpenGL.framework in Frameworks */,
+				662757B31BBDD03700CA5F25 /* libglfw.3.1.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		667913361BBC4CBC000DBCCC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,6 +447,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		662757831BBDCFEB00CA5F25 /* World Scene */ = {
+			isa = PBXGroup;
+			children = (
+				662757AB1BBDD03200CA5F25 /* World Scene.cpp */,
+			);
+			name = "World Scene";
+			sourceTree = "<group>";
+		};
+		662757841BBDCFF300CA5F25 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				662757851BBDD00B00CA5F25 /* ColorMultUniform.frag */,
+				662757861BBDD00B00CA5F25 /* ColorPassthrough.frag */,
+				662757871BBDD00B00CA5F25 /* ColorUniform.frag */,
+				662757881BBDD00B00CA5F25 /* GenCones.lua */,
+				662757891BBDD00B00CA5F25 /* GenCubes.lua */,
+				6627578A1BBDD00B00CA5F25 /* GenCylinders.lua */,
+				6627578B1BBDD00B00CA5F25 /* GenPlane.lua */,
+				6627578C1BBDD00B00CA5F25 /* PosColorWorldTransform.vert */,
+				6627578D1BBDD00B00CA5F25 /* PosColorWorldTransformUBO.vert */,
+				6627578E1BBDD00B00CA5F25 /* PosOnlyWorldTransform.vert */,
+				6627578F1BBDD00B00CA5F25 /* PosOnlyWorldTransformUBO.vert */,
+				662757901BBDD00B00CA5F25 /* UnitCone.xml */,
+				662757911BBDD00B00CA5F25 /* UnitConeTint.xml */,
+				662757921BBDD00B00CA5F25 /* UnitCube.xml */,
+				662757931BBDD00B00CA5F25 /* UnitCubeColor.xml */,
+				662757941BBDD00B00CA5F25 /* UnitCubeTint.xml */,
+				662757951BBDD00B00CA5F25 /* UnitCylinder.xml */,
+				662757961BBDD00B00CA5F25 /* UnitCylinderTint.xml */,
+				662757971BBDD00B00CA5F25 /* UnitPlane.xml */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		662757C81BBDD4FB00CA5F25 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				66CD40D31BB31D90003B3399 /* helpers.h */,
+			);
+			name = Helpers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		662757D31BBED9D800CA5F25 /* glutil */ = {
+			isa = PBXGroup;
+			children = (
+				662757CB1BBDD52B00CA5F25 /* glutil.h */,
+			);
+			name = glutil;
+			sourceTree = "<group>";
+		};
+		662757D41BBEDA2900CA5F25 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				662757C91BBDD51E00CA5F25 /* MatrixStack.cpp */,
+				662757CE1BBDD57400CA5F25 /* Mesh.cpp */,
+				662757CC1BBDD52B00CA5F25 /* MatrixStack.h */,
+				662757CF1BBDD57400CA5F25 /* Mesh.h */,
+			);
+			name = framework;
+			sourceTree = "<group>";
+		};
 		6679132D1BBC4C24000DBCCC /* Rotations */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,6 +650,7 @@
 				66D462E21BBB37F500FBC7E7 /* Tutorial 6 Scale.app */,
 				6679133F1BBC4CBC000DBCCC /* Tutorial 6 Rotations.app */,
 				667913501BBC8525000DBCCC /* Tutorial 6 Hierarchy.app */,
+				662757BA1BBDD03700CA5F25 /* Tutorial 7 World Scene.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -544,6 +658,9 @@
 		66CD40B51BB2269F003B3399 /* GLFW_gltut */ = {
 			isa = PBXGroup;
 			children = (
+				662757D41BBEDA2900CA5F25 /* framework */,
+				662757D31BBED9D800CA5F25 /* glutil */,
+				662757C81BBDD4FB00CA5F25 /* Helpers */,
 				66CD40D01BB312B6003B3399 /* Chapter 01 Hello Triangle */,
 				669109961BB321430015A8DA /* Chapter 02 Playing with Colors */,
 				669109A51BB4A3B90015A8DA /* Chapter 03 OpenGLs Moving Triangle */,
@@ -562,7 +679,6 @@
 				66D462CE1BBB375E00FBC7E7 /* Chapter 16 Gamma and Textures */,
 				66D462CD1BBB375B00FBC7E7 /* Chapter 17 Spotlight on Textures */,
 				66CD40C71BB226EF003B3399 /* main.cpp */,
-				66CD40D31BB31D90003B3399 /* helpers.h */,
 				66CD40CE1BB312AC003B3399 /* Scene.h */,
 			);
 			path = GLFW_gltut;
@@ -746,6 +862,8 @@
 		66D462C81BBB36AD00FBC7E7 /* Chapter 07 World in Motion */ = {
 			isa = PBXGroup;
 			children = (
+				662757841BBDCFF300CA5F25 /* Data */,
+				662757831BBDCFEB00CA5F25 /* World Scene */,
 			);
 			name = "Chapter 07 World in Motion";
 			sourceTree = "<group>";
@@ -823,6 +941,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		662757AD1BBDD03700CA5F25 /* Tutorial 7 World Scene */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 662757B71BBDD03700CA5F25 /* Build configuration list for PBXNativeTarget "Tutorial 7 World Scene" */;
+			buildPhases = (
+				662757AE1BBDD03700CA5F25 /* Sources */,
+				662757B11BBDD03700CA5F25 /* Frameworks */,
+				662757B41BBDD03700CA5F25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tutorial 7 World Scene";
+			productName = GLFW_gltut;
+			productReference = 662757BA1BBDD03700CA5F25 /* Tutorial 7 World Scene.app */;
+			productType = "com.apple.product-type.application";
+		};
 		667913321BBC4CBC000DBCCC /* Tutorial 6 Rotations */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6679133C1BBC4CBC000DBCCC /* Build configuration list for PBXNativeTarget "Tutorial 6 Rotations" */;
@@ -1228,11 +1363,30 @@
 				66D462D51BBB37F500FBC7E7 /* Tutorial 6 Scale */,
 				667913321BBC4CBC000DBCCC /* Tutorial 6 Rotations */,
 				667913431BBC8525000DBCCC /* Tutorial 6 Hierarchy */,
+				662757AD1BBDD03700CA5F25 /* Tutorial 7 World Scene */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		662757B41BBDD03700CA5F25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662757BD1BBDD0C100CA5F25 /* ColorMultUniform.frag in Resources */,
+				662757BE1BBDD0C100CA5F25 /* ColorPassthrough.frag in Resources */,
+				662757BF1BBDD0C100CA5F25 /* ColorUniform.frag in Resources */,
+				662757C01BBDD0C100CA5F25 /* PosColorWorldTransform.vert in Resources */,
+				662757C11BBDD0C100CA5F25 /* PosColorWorldTransformUBO.vert in Resources */,
+				662757C21BBDD0C100CA5F25 /* PosOnlyWorldTransform.vert in Resources */,
+				662757D21BBDD82C00CA5F25 /* UnitConeTint.xml in Resources */,
+				662757C61BBDD0C100CA5F25 /* UnitCylinderTint.xml in Resources */,
+				662757C51BBDD0C100CA5F25 /* UnitCubeTint.xml in Resources */,
+				662757C41BBDD0C100CA5F25 /* UnitCubeColor.xml in Resources */,
+				662757C71BBDD0C100CA5F25 /* UnitPlane.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		667913391BBC4CBC000DBCCC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1318,7 +1472,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66D462C61BBB283600FBC7E7 /* info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1424,6 +1577,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		662757AE1BBDD03700CA5F25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662757D11BBDD58300CA5F25 /* Mesh.cpp in Sources */,
+				662757CD1BBDD54600CA5F25 /* MatrixStack.cpp in Sources */,
+				662757BC1BBDD04C00CA5F25 /* World Scene.cpp in Sources */,
+				662757B01BBDD03700CA5F25 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		667913331BBC4CBC000DBCCC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1616,6 +1780,38 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		662757B81BBDD03700CA5F25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				HEADER_SEARCH_PATHS = /opt/local/include;
+				INFOPLIST_FILE = "$(SRCROOT)/GLFW_gltut/info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = /opt/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fakeurl.GLFW_gltut;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		662757B91BBDD03700CA5F25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				HEADER_SEARCH_PATHS = /opt/local/include;
+				INFOPLIST_FILE = "$(SRCROOT)/GLFW_gltut/info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = /opt/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fakeurl.GLFW_gltut;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		6679133D1BBC4CBC000DBCCC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2370,6 +2566,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		662757B71BBDD03700CA5F25 /* Build configuration list for PBXNativeTarget "Tutorial 7 World Scene" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				662757B81BBDD03700CA5F25 /* Debug */,
+				662757B91BBDD03700CA5F25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6679133C1BBC4CBC000DBCCC /* Build configuration list for PBXNativeTarget "Tutorial 6 Rotations" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
