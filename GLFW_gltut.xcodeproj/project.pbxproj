@@ -15,7 +15,6 @@
 		662757BE1BBDD0C100CA5F25 /* ColorPassthrough.frag in Resources */ = {isa = PBXBuildFile; fileRef = 662757861BBDD00B00CA5F25 /* ColorPassthrough.frag */; };
 		662757BF1BBDD0C100CA5F25 /* ColorUniform.frag in Resources */ = {isa = PBXBuildFile; fileRef = 662757871BBDD00B00CA5F25 /* ColorUniform.frag */; };
 		662757C01BBDD0C100CA5F25 /* PosColorWorldTransform.vert in Resources */ = {isa = PBXBuildFile; fileRef = 6627578C1BBDD00B00CA5F25 /* PosColorWorldTransform.vert */; };
-		662757C11BBDD0C100CA5F25 /* PosColorWorldTransformUBO.vert in Resources */ = {isa = PBXBuildFile; fileRef = 6627578D1BBDD00B00CA5F25 /* PosColorWorldTransformUBO.vert */; };
 		662757C21BBDD0C100CA5F25 /* PosOnlyWorldTransform.vert in Resources */ = {isa = PBXBuildFile; fileRef = 6627578E1BBDD00B00CA5F25 /* PosOnlyWorldTransform.vert */; };
 		662757C41BBDD0C100CA5F25 /* UnitCubeColor.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757931BBDD00B00CA5F25 /* UnitCubeColor.xml */; };
 		662757C51BBDD0C100CA5F25 /* UnitCubeTint.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757941BBDD00B00CA5F25 /* UnitCubeTint.xml */; };
@@ -24,6 +23,22 @@
 		662757CD1BBDD54600CA5F25 /* MatrixStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 662757C91BBDD51E00CA5F25 /* MatrixStack.cpp */; };
 		662757D11BBDD58300CA5F25 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 662757CE1BBDD57400CA5F25 /* Mesh.cpp */; };
 		662757D21BBDD82C00CA5F25 /* UnitConeTint.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757911BBDD00B00CA5F25 /* UnitConeTint.xml */; };
+		662757DA1BBF1A7300CA5F25 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 662757CE1BBDD57400CA5F25 /* Mesh.cpp */; };
+		662757DB1BBF1A7300CA5F25 /* MatrixStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 662757C91BBDD51E00CA5F25 /* MatrixStack.cpp */; };
+		662757DD1BBF1A7300CA5F25 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66CD40C71BB226EF003B3399 /* main.cpp */; };
+		662757DF1BBF1A7300CA5F25 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40CB1BB228CD003B3399 /* OpenGL.framework */; };
+		662757E01BBF1A7300CA5F25 /* libglfw.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40C91BB2284C003B3399 /* libglfw.3.1.dylib */; };
+		662757E21BBF1A7300CA5F25 /* ColorMultUniform.frag in Resources */ = {isa = PBXBuildFile; fileRef = 662757851BBDD00B00CA5F25 /* ColorMultUniform.frag */; };
+		662757E31BBF1A7300CA5F25 /* ColorPassthrough.frag in Resources */ = {isa = PBXBuildFile; fileRef = 662757861BBDD00B00CA5F25 /* ColorPassthrough.frag */; };
+		662757E41BBF1A7300CA5F25 /* ColorUniform.frag in Resources */ = {isa = PBXBuildFile; fileRef = 662757871BBDD00B00CA5F25 /* ColorUniform.frag */; };
+		662757E61BBF1A7300CA5F25 /* PosColorWorldTransformUBO.vert in Resources */ = {isa = PBXBuildFile; fileRef = 6627578D1BBDD00B00CA5F25 /* PosColorWorldTransformUBO.vert */; };
+		662757E81BBF1A7300CA5F25 /* UnitConeTint.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757911BBDD00B00CA5F25 /* UnitConeTint.xml */; };
+		662757E91BBF1A7300CA5F25 /* UnitCylinderTint.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757961BBDD00B00CA5F25 /* UnitCylinderTint.xml */; };
+		662757EA1BBF1A7300CA5F25 /* UnitCubeTint.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757941BBDD00B00CA5F25 /* UnitCubeTint.xml */; };
+		662757EB1BBF1A7300CA5F25 /* UnitCubeColor.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757931BBDD00B00CA5F25 /* UnitCubeColor.xml */; };
+		662757EC1BBF1A7300CA5F25 /* UnitPlane.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757971BBDD00B00CA5F25 /* UnitPlane.xml */; };
+		662757F21BBF1A9800CA5F25 /* World with UBO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 662757D61BBF1A6700CA5F25 /* World with UBO.cpp */; };
+		662757F31BBF1C3200CA5F25 /* PosOnlyWorldTransformUBO.vert in Resources */ = {isa = PBXBuildFile; fileRef = 6627578F1BBDD00B00CA5F25 /* PosOnlyWorldTransformUBO.vert */; };
 		667913351BBC4CBC000DBCCC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66CD40C71BB226EF003B3399 /* main.cpp */; };
 		667913371BBC4CBC000DBCCC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40CB1BB228CD003B3399 /* OpenGL.framework */; };
 		667913381BBC4CBC000DBCCC /* libglfw.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40C91BB2284C003B3399 /* libglfw.3.1.dylib */; };
@@ -177,6 +192,8 @@
 		662757CC1BBDD52B00CA5F25 /* MatrixStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatrixStack.h; path = glutil/MatrixStack.h; sourceTree = "<group>"; };
 		662757CE1BBDD57400CA5F25 /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Mesh.cpp; path = framework/Mesh.cpp; sourceTree = "<group>"; };
 		662757CF1BBDD57400CA5F25 /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mesh.h; path = framework/Mesh.h; sourceTree = "<group>"; };
+		662757D61BBF1A6700CA5F25 /* World with UBO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "World with UBO.cpp"; path = "Tut07/World with UBO/World with UBO.cpp"; sourceTree = "<group>"; };
+		662757F01BBF1A7300CA5F25 /* Tutorial 7 World with UBO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutorial 7 World with UBO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		667913301BBC4C69000DBCCC /* Rotations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Rotations.cpp; path = Tut06/Rotations/Rotations.cpp; sourceTree = "<group>"; };
 		6679133F1BBC4CBC000DBCCC /* Tutorial 6 Rotations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutorial 6 Rotations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		667913501BBC8525000DBCCC /* Tutorial 6 Hierarchy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutorial 6 Hierarchy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,6 +269,15 @@
 			files = (
 				662757B21BBDD03700CA5F25 /* OpenGL.framework in Frameworks */,
 				662757B31BBDD03700CA5F25 /* libglfw.3.1.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662757DE1BBF1A7300CA5F25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662757DF1BBF1A7300CA5F25 /* OpenGL.framework in Frameworks */,
+				662757E01BBF1A7300CA5F25 /* libglfw.3.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +535,14 @@
 			name = framework;
 			sourceTree = "<group>";
 		};
+		662757D51BBF1A0C00CA5F25 /* World with UBO */ = {
+			isa = PBXGroup;
+			children = (
+				662757D61BBF1A6700CA5F25 /* World with UBO.cpp */,
+			);
+			name = "World with UBO";
+			sourceTree = "<group>";
+		};
 		6679132D1BBC4C24000DBCCC /* Rotations */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,6 +685,7 @@
 				6679133F1BBC4CBC000DBCCC /* Tutorial 6 Rotations.app */,
 				667913501BBC8525000DBCCC /* Tutorial 6 Hierarchy.app */,
 				662757BA1BBDD03700CA5F25 /* Tutorial 7 World Scene.app */,
+				662757F01BBF1A7300CA5F25 /* Tutorial 7 World with UBO.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -864,6 +899,7 @@
 			children = (
 				662757841BBDCFF300CA5F25 /* Data */,
 				662757831BBDCFEB00CA5F25 /* World Scene */,
+				662757D51BBF1A0C00CA5F25 /* World with UBO */,
 			);
 			name = "Chapter 07 World in Motion";
 			sourceTree = "<group>";
@@ -956,6 +992,23 @@
 			name = "Tutorial 7 World Scene";
 			productName = GLFW_gltut;
 			productReference = 662757BA1BBDD03700CA5F25 /* Tutorial 7 World Scene.app */;
+			productType = "com.apple.product-type.application";
+		};
+		662757D81BBF1A7300CA5F25 /* Tutorial 7 World with UBO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 662757ED1BBF1A7300CA5F25 /* Build configuration list for PBXNativeTarget "Tutorial 7 World with UBO" */;
+			buildPhases = (
+				662757D91BBF1A7300CA5F25 /* Sources */,
+				662757DE1BBF1A7300CA5F25 /* Frameworks */,
+				662757E11BBF1A7300CA5F25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tutorial 7 World with UBO";
+			productName = GLFW_gltut;
+			productReference = 662757F01BBF1A7300CA5F25 /* Tutorial 7 World with UBO.app */;
 			productType = "com.apple.product-type.application";
 		};
 		667913321BBC4CBC000DBCCC /* Tutorial 6 Rotations */ = {
@@ -1364,6 +1417,7 @@
 				667913321BBC4CBC000DBCCC /* Tutorial 6 Rotations */,
 				667913431BBC8525000DBCCC /* Tutorial 6 Hierarchy */,
 				662757AD1BBDD03700CA5F25 /* Tutorial 7 World Scene */,
+				662757D81BBF1A7300CA5F25 /* Tutorial 7 World with UBO */,
 			);
 		};
 /* End PBXProject section */
@@ -1377,13 +1431,29 @@
 				662757BE1BBDD0C100CA5F25 /* ColorPassthrough.frag in Resources */,
 				662757BF1BBDD0C100CA5F25 /* ColorUniform.frag in Resources */,
 				662757C01BBDD0C100CA5F25 /* PosColorWorldTransform.vert in Resources */,
-				662757C11BBDD0C100CA5F25 /* PosColorWorldTransformUBO.vert in Resources */,
 				662757C21BBDD0C100CA5F25 /* PosOnlyWorldTransform.vert in Resources */,
 				662757D21BBDD82C00CA5F25 /* UnitConeTint.xml in Resources */,
 				662757C61BBDD0C100CA5F25 /* UnitCylinderTint.xml in Resources */,
 				662757C51BBDD0C100CA5F25 /* UnitCubeTint.xml in Resources */,
 				662757C41BBDD0C100CA5F25 /* UnitCubeColor.xml in Resources */,
 				662757C71BBDD0C100CA5F25 /* UnitPlane.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662757E11BBF1A7300CA5F25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662757F31BBF1C3200CA5F25 /* PosOnlyWorldTransformUBO.vert in Resources */,
+				662757E21BBF1A7300CA5F25 /* ColorMultUniform.frag in Resources */,
+				662757E31BBF1A7300CA5F25 /* ColorPassthrough.frag in Resources */,
+				662757E41BBF1A7300CA5F25 /* ColorUniform.frag in Resources */,
+				662757E61BBF1A7300CA5F25 /* PosColorWorldTransformUBO.vert in Resources */,
+				662757E81BBF1A7300CA5F25 /* UnitConeTint.xml in Resources */,
+				662757E91BBF1A7300CA5F25 /* UnitCylinderTint.xml in Resources */,
+				662757EA1BBF1A7300CA5F25 /* UnitCubeTint.xml in Resources */,
+				662757EB1BBF1A7300CA5F25 /* UnitCubeColor.xml in Resources */,
+				662757EC1BBF1A7300CA5F25 /* UnitPlane.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1585,6 +1655,17 @@
 				662757CD1BBDD54600CA5F25 /* MatrixStack.cpp in Sources */,
 				662757BC1BBDD04C00CA5F25 /* World Scene.cpp in Sources */,
 				662757B01BBDD03700CA5F25 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662757D91BBF1A7300CA5F25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662757F21BBF1A9800CA5F25 /* World with UBO.cpp in Sources */,
+				662757DA1BBF1A7300CA5F25 /* Mesh.cpp in Sources */,
+				662757DB1BBF1A7300CA5F25 /* MatrixStack.cpp in Sources */,
+				662757DD1BBF1A7300CA5F25 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1797,6 +1878,38 @@
 			name = Debug;
 		};
 		662757B91BBDD03700CA5F25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				HEADER_SEARCH_PATHS = /opt/local/include;
+				INFOPLIST_FILE = "$(SRCROOT)/GLFW_gltut/info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = /opt/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fakeurl.GLFW_gltut;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		662757EE1BBF1A7300CA5F25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				HEADER_SEARCH_PATHS = /opt/local/include;
+				INFOPLIST_FILE = "$(SRCROOT)/GLFW_gltut/info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = /opt/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fakeurl.GLFW_gltut;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		662757EF1BBF1A7300CA5F25 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
@@ -2571,6 +2684,15 @@
 			buildConfigurations = (
 				662757B81BBDD03700CA5F25 /* Debug */,
 				662757B91BBDD03700CA5F25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		662757ED1BBF1A7300CA5F25 /* Build configuration list for PBXNativeTarget "Tutorial 7 World with UBO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				662757EE1BBF1A7300CA5F25 /* Debug */,
+				662757EF1BBF1A7300CA5F25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
