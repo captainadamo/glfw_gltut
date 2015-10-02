@@ -56,7 +56,7 @@ inline GLuint CreateShader(GLenum eShaderType, const char *strFileData)
     return shader;
 }
 
-static std::string FindFileOrThrow( const std::string &filename )
+inline std::string FindFileOrThrow( const std::string &filename )
 {
     std::ifstream testFile(filename.c_str());
     if(testFile.is_open())
