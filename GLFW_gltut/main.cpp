@@ -45,8 +45,8 @@ int main(void)
     int windowHeight = 0;
 
     glfwGetFramebufferSize(window, &windowWidth, &windowHeight);
-    onFramebufferResize(window, windowWidth, windowHeight);
-    glfwSetFramebufferSizeCallback(window, &onFramebufferResize);
+    reshape(window, windowWidth, windowHeight);
+    glfwSetFramebufferSizeCallback(window, &reshape);
 
     glfwSetKeyCallback(window, key_callback);
 

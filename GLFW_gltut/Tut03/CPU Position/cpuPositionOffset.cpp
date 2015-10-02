@@ -40,7 +40,7 @@ void AdjustVertexData(float xOffset, float yOffset)
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
-void onFramebufferResize(GLFWwindow* window, int width, int height)
+void reshape(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, (GLsizei)width, (GLsizei)height);
     display();

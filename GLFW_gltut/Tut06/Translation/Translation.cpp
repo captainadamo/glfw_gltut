@@ -116,7 +116,7 @@ float CalcFrustumScale(float fovDeg)
 
 const float frustumScale = CalcFrustumScale(45.0f);
 
-void onFramebufferResize(GLFWwindow* window, int width, int height)
+void reshape(GLFWwindow* window, int width, int height)
 {
     cameraToClipMatrix[0].x = frustumScale / (width / float(height));
     cameraToClipMatrix[1].y = frustumScale;

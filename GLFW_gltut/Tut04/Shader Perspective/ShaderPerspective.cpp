@@ -108,7 +108,7 @@ GLuint offsetUniform;
 GLuint frustumScaleUnif;
 GLuint zNearUnif, zFarUnif;
 
-void onFramebufferResize(GLFWwindow* window, int width, int height)
+void reshape(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, (GLsizei)width, (GLsizei)height);
     display();

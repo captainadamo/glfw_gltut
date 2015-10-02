@@ -26,7 +26,7 @@ void ComputePositionOffsets(float &xOffset, float &yOffset)
     yOffset = sinf(currentTimeThroughLoop * scale) * 0.5f;
 }
 
-void onFramebufferResize(GLFWwindow* window, int width, int height)
+void reshape(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, (GLsizei)width, (GLsizei)height);
     display();

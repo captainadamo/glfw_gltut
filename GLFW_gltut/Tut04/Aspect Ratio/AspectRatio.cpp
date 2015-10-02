@@ -109,7 +109,7 @@ GLuint perspectiveMatrixUnif;
 float perspectiveMatrix[16];
 const float frustumScale = 1.0f;
 
-void onFramebufferResize(GLFWwindow* window, int width, int height)
+void reshape(GLFWwindow* window, int width, int height)
 {
     perspectiveMatrix[0] = frustumScale / (width / float(height));
     perspectiveMatrix[5] = frustumScale;

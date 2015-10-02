@@ -527,7 +527,7 @@ void display()
     }
 }
 
-void onFramebufferResize(GLFWwindow *window, int w, int h)
+void reshape(GLFWwindow *window, int w, int h)
 {
     glutil::MatrixStack persMatrix;
     persMatrix.Perspective(45.0f, (w / (float)h), zNear, zFar);
