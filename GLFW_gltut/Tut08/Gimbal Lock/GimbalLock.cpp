@@ -16,7 +16,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-const char *tutorialName = "Tutorial 07 World with UBO";
+const char *tutorialName = "Tutorial 08 Gimbal Lock";
 
 GLuint positionAttrib;
 GLuint colorAttrib;
