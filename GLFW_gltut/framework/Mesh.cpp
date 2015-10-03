@@ -98,7 +98,7 @@ namespace Framework
 	AttribData theValue;\
 	inStream >> std::ws >> theValue.attribDataValue;\
 	if(inStream.fail())\
-        throw std::runtime_error("Parse error in array data stream." + std::string(__PRETTY_FUNCTION__));\
+        throw std::runtime_error("Parse error in array data stream.");\
 	outputData.push_back(theValue);\
 	}\
 	}\
