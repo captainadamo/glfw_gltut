@@ -39,6 +39,18 @@
 		662757EC1BBF1A7300CA5F25 /* UnitPlane.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757971BBDD00B00CA5F25 /* UnitPlane.xml */; };
 		662757F21BBF1A9800CA5F25 /* World with UBO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 662757D61BBF1A6700CA5F25 /* World with UBO.cpp */; };
 		662757F31BBF1C3200CA5F25 /* PosOnlyWorldTransformUBO.vert in Resources */ = {isa = PBXBuildFile; fileRef = 6627578F1BBDD00B00CA5F25 /* PosOnlyWorldTransformUBO.vert */; };
+		6627580F1BBF79E600CA5F25 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66CD40C71BB226EF003B3399 /* main.cpp */; };
+		662758111BBF79E600CA5F25 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40CB1BB228CD003B3399 /* OpenGL.framework */; };
+		662758121BBF79E600CA5F25 /* libglfw.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40C91BB2284C003B3399 /* libglfw.3.1.dylib */; };
+		662758251BBF7A5400CA5F25 /* GimbalLock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 662758231BBF7A4700CA5F25 /* GimbalLock.cpp */; };
+		662758261BBF7BAE00CA5F25 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 662757CE1BBDD57400CA5F25 /* Mesh.cpp */; };
+		662758271BBF7BB700CA5F25 /* MatrixStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 662757C91BBDD51E00CA5F25 /* MatrixStack.cpp */; };
+		662758281BBF7BEC00CA5F25 /* ColorMultUniform.frag in Resources */ = {isa = PBXBuildFile; fileRef = 662757F61BBF79E100CA5F25 /* ColorMultUniform.frag */; };
+		662758291BBF7BEC00CA5F25 /* LargeGimbal.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757F91BBF79E100CA5F25 /* LargeGimbal.xml */; };
+		6627582A1BBF7BEC00CA5F25 /* MediumGimbal.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757FA1BBF79E100CA5F25 /* MediumGimbal.xml */; };
+		6627582B1BBF7BEC00CA5F25 /* PosColorLocalTransform.vert in Resources */ = {isa = PBXBuildFile; fileRef = 662757FB1BBF79E100CA5F25 /* PosColorLocalTransform.vert */; };
+		6627582C1BBF7BEC00CA5F25 /* SmallGimbal.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757FE1BBF79E100CA5F25 /* SmallGimbal.xml */; };
+		6627582D1BBF7C0600CA5F25 /* Ship.xml in Resources */ = {isa = PBXBuildFile; fileRef = 662757FD1BBF79E100CA5F25 /* Ship.xml */; };
 		667913351BBC4CBC000DBCCC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66CD40C71BB226EF003B3399 /* main.cpp */; };
 		667913371BBC4CBC000DBCCC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40CB1BB228CD003B3399 /* OpenGL.framework */; };
 		667913381BBC4CBC000DBCCC /* libglfw.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CD40C91BB2284C003B3399 /* libglfw.3.1.dylib */; };
@@ -194,6 +206,18 @@
 		662757CF1BBDD57400CA5F25 /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mesh.h; path = framework/Mesh.h; sourceTree = "<group>"; };
 		662757D61BBF1A6700CA5F25 /* World with UBO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "World with UBO.cpp"; path = "Tut07/World with UBO/World with UBO.cpp"; sourceTree = "<group>"; };
 		662757F01BBF1A7300CA5F25 /* Tutorial 7 World with UBO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutorial 7 World with UBO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		662757F61BBF79E100CA5F25 /* ColorMultUniform.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ColorMultUniform.frag; path = Tut08/data/ColorMultUniform.frag; sourceTree = "<group>"; };
+		662757F71BBF79E100CA5F25 /* GenGimbals.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GenGimbals.lua; path = Tut08/data/GenGimbals.lua; sourceTree = "<group>"; };
+		662757F81BBF79E100CA5F25 /* GenPlane.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GenPlane.lua; path = Tut08/data/GenPlane.lua; sourceTree = "<group>"; };
+		662757F91BBF79E100CA5F25 /* LargeGimbal.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = LargeGimbal.xml; path = Tut08/data/LargeGimbal.xml; sourceTree = "<group>"; };
+		662757FA1BBF79E100CA5F25 /* MediumGimbal.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = MediumGimbal.xml; path = Tut08/data/MediumGimbal.xml; sourceTree = "<group>"; };
+		662757FB1BBF79E100CA5F25 /* PosColorLocalTransform.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = PosColorLocalTransform.vert; path = Tut08/data/PosColorLocalTransform.vert; sourceTree = "<group>"; };
+		662757FC1BBF79E100CA5F25 /* Ship.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; name = Ship.dae; path = Tut08/data/Ship.dae; sourceTree = "<group>"; };
+		662757FD1BBF79E100CA5F25 /* Ship.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Ship.xml; path = Tut08/data/Ship.xml; sourceTree = "<group>"; };
+		662757FE1BBF79E100CA5F25 /* SmallGimbal.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SmallGimbal.xml; path = Tut08/data/SmallGimbal.xml; sourceTree = "<group>"; };
+		662757FF1BBF79E100CA5F25 /* UnitPlane.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = UnitPlane.xml; path = Tut08/data/UnitPlane.xml; sourceTree = "<group>"; };
+		662758211BBF79E600CA5F25 /* Tutorial 8 Gimbal Lock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutorial 8 Gimbal Lock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		662758231BBF7A4700CA5F25 /* GimbalLock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GimbalLock.cpp; path = "Tut08/Gimbal Lock/GimbalLock.cpp"; sourceTree = "<group>"; };
 		667913301BBC4C69000DBCCC /* Rotations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Rotations.cpp; path = Tut06/Rotations/Rotations.cpp; sourceTree = "<group>"; };
 		6679133F1BBC4CBC000DBCCC /* Tutorial 6 Rotations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutorial 6 Rotations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		667913501BBC8525000DBCCC /* Tutorial 6 Hierarchy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutorial 6 Hierarchy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,6 +302,15 @@
 			files = (
 				662757DF1BBF1A7300CA5F25 /* OpenGL.framework in Frameworks */,
 				662757E01BBF1A7300CA5F25 /* libglfw.3.1.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662758101BBF79E600CA5F25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662758111BBF79E600CA5F25 /* OpenGL.framework in Frameworks */,
+				662758121BBF79E600CA5F25 /* libglfw.3.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +576,31 @@
 			name = "World with UBO";
 			sourceTree = "<group>";
 		};
+		662757F41BBF79C700CA5F25 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				662757F61BBF79E100CA5F25 /* ColorMultUniform.frag */,
+				662757F71BBF79E100CA5F25 /* GenGimbals.lua */,
+				662757F81BBF79E100CA5F25 /* GenPlane.lua */,
+				662757F91BBF79E100CA5F25 /* LargeGimbal.xml */,
+				662757FA1BBF79E100CA5F25 /* MediumGimbal.xml */,
+				662757FB1BBF79E100CA5F25 /* PosColorLocalTransform.vert */,
+				662757FC1BBF79E100CA5F25 /* Ship.dae */,
+				662757FD1BBF79E100CA5F25 /* Ship.xml */,
+				662757FE1BBF79E100CA5F25 /* SmallGimbal.xml */,
+				662757FF1BBF79E100CA5F25 /* UnitPlane.xml */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		662757F51BBF79CF00CA5F25 /* Gimbal Lock */ = {
+			isa = PBXGroup;
+			children = (
+				662758231BBF7A4700CA5F25 /* GimbalLock.cpp */,
+			);
+			name = "Gimbal Lock";
+			sourceTree = "<group>";
+		};
 		6679132D1BBC4C24000DBCCC /* Rotations */ = {
 			isa = PBXGroup;
 			children = (
@@ -686,6 +744,7 @@
 				667913501BBC8525000DBCCC /* Tutorial 6 Hierarchy.app */,
 				662757BA1BBDD03700CA5F25 /* Tutorial 7 World Scene.app */,
 				662757F01BBF1A7300CA5F25 /* Tutorial 7 World with UBO.app */,
+				662758211BBF79E600CA5F25 /* Tutorial 8 Gimbal Lock.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -907,6 +966,8 @@
 		66D462C91BBB36B800FBC7E7 /* Chapter 08 Getting Oriented */ = {
 			isa = PBXGroup;
 			children = (
+				662757F41BBF79C700CA5F25 /* Data */,
+				662757F51BBF79CF00CA5F25 /* Gimbal Lock */,
 			);
 			name = "Chapter 08 Getting Oriented";
 			sourceTree = "<group>";
@@ -1009,6 +1070,23 @@
 			name = "Tutorial 7 World with UBO";
 			productName = GLFW_gltut;
 			productReference = 662757F01BBF1A7300CA5F25 /* Tutorial 7 World with UBO.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6627580A1BBF79E600CA5F25 /* Tutorial 8 Gimbal Lock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6627581E1BBF79E600CA5F25 /* Build configuration list for PBXNativeTarget "Tutorial 8 Gimbal Lock" */;
+			buildPhases = (
+				6627580B1BBF79E600CA5F25 /* Sources */,
+				662758101BBF79E600CA5F25 /* Frameworks */,
+				662758131BBF79E600CA5F25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tutorial 8 Gimbal Lock";
+			productName = GLFW_gltut;
+			productReference = 662758211BBF79E600CA5F25 /* Tutorial 8 Gimbal Lock.app */;
 			productType = "com.apple.product-type.application";
 		};
 		667913321BBC4CBC000DBCCC /* Tutorial 6 Rotations */ = {
@@ -1418,6 +1496,7 @@
 				667913431BBC8525000DBCCC /* Tutorial 6 Hierarchy */,
 				662757AD1BBDD03700CA5F25 /* Tutorial 7 World Scene */,
 				662757D81BBF1A7300CA5F25 /* Tutorial 7 World with UBO */,
+				6627580A1BBF79E600CA5F25 /* Tutorial 8 Gimbal Lock */,
 			);
 		};
 /* End PBXProject section */
@@ -1454,6 +1533,19 @@
 				662757EA1BBF1A7300CA5F25 /* UnitCubeTint.xml in Resources */,
 				662757EB1BBF1A7300CA5F25 /* UnitCubeColor.xml in Resources */,
 				662757EC1BBF1A7300CA5F25 /* UnitPlane.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662758131BBF79E600CA5F25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6627582D1BBF7C0600CA5F25 /* Ship.xml in Resources */,
+				662758281BBF7BEC00CA5F25 /* ColorMultUniform.frag in Resources */,
+				662758291BBF7BEC00CA5F25 /* LargeGimbal.xml in Resources */,
+				6627582A1BBF7BEC00CA5F25 /* MediumGimbal.xml in Resources */,
+				6627582B1BBF7BEC00CA5F25 /* PosColorLocalTransform.vert in Resources */,
+				6627582C1BBF7BEC00CA5F25 /* SmallGimbal.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1666,6 +1758,17 @@
 				662757DA1BBF1A7300CA5F25 /* Mesh.cpp in Sources */,
 				662757DB1BBF1A7300CA5F25 /* MatrixStack.cpp in Sources */,
 				662757DD1BBF1A7300CA5F25 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6627580B1BBF79E600CA5F25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662758271BBF7BB700CA5F25 /* MatrixStack.cpp in Sources */,
+				662758261BBF7BAE00CA5F25 /* Mesh.cpp in Sources */,
+				662758251BBF7A5400CA5F25 /* GimbalLock.cpp in Sources */,
+				6627580F1BBF79E600CA5F25 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1910,6 +2013,38 @@
 			name = Debug;
 		};
 		662757EF1BBF1A7300CA5F25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				HEADER_SEARCH_PATHS = /opt/local/include;
+				INFOPLIST_FILE = "$(SRCROOT)/GLFW_gltut/info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = /opt/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fakeurl.GLFW_gltut;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6627581F1BBF79E600CA5F25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				HEADER_SEARCH_PATHS = /opt/local/include;
+				INFOPLIST_FILE = "$(SRCROOT)/GLFW_gltut/info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = /opt/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fakeurl.GLFW_gltut;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		662758201BBF79E600CA5F25 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
@@ -2693,6 +2828,15 @@
 			buildConfigurations = (
 				662757EE1BBF1A7300CA5F25 /* Debug */,
 				662757EF1BBF1A7300CA5F25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6627581E1BBF79E600CA5F25 /* Build configuration list for PBXNativeTarget "Tutorial 8 Gimbal Lock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6627581F1BBF79E600CA5F25 /* Debug */,
+				662758201BBF79E600CA5F25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
