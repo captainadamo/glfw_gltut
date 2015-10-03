@@ -81,8 +81,8 @@ inline GLuint CreateProgram(const std::vector<GLuint> &shaderList)
 {
     GLuint program = glCreateProgram();
 
-    for(size_t iLoop = 0; iLoop < shaderList.size(); iLoop++)
-        glAttachShader(program, shaderList[iLoop]);
+    for(size_t loop = 0; loop < shaderList.size(); loop++)
+        glAttachShader(program, shaderList[loop]);
 
     glLinkProgram(program);
 
@@ -99,8 +99,8 @@ inline GLuint CreateProgram(const std::vector<GLuint> &shaderList)
         delete[] strInfoLog;
     }
 
-    for(size_t iLoop = 0; iLoop < shaderList.size(); iLoop++)
-        glDetachShader(program, shaderList[iLoop]);
+    for(size_t loop = 0; loop < shaderList.size(); loop++)
+        glDetachShader(program, shaderList[loop]);
 
     return program;
 }

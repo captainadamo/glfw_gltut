@@ -18,7 +18,6 @@
 
 const char *tutorialName = "Tutorial 07 World with UBO";
 
-//GLuint theProgram;
 GLuint positionAttrib;
 GLuint colorAttrib;
 
@@ -28,14 +27,14 @@ GLuint baseColorUnif;
 
 glm::mat4 cameraToClipMatrix(0.0f);
 
-float CalcFrustumScale(float fFovDeg)
+float CalcFrustumScale(float fovDeg)
 {
-	const float degToRad = 3.14159f * 2.0f / 360.0f;
-	float fFovRad = fFovDeg * degToRad;
-	return 1.0f / tan(fFovRad / 2.0f);
+	const float degToRad = M_PI * 2.0f / 360.0f;
+	float fovRad = fovDeg * degToRad;
+	return 1.0f / tan(fovRad / 2.0f);
 }
 
-const float fFrustumScale = CalcFrustumScale(20.0f);
+const float frustumScale = CalcFrustumScale(20.0f);
 
 void InitializeProgram()
 {
@@ -55,8 +54,8 @@ void InitializeProgram()
 
 	float fzNear = 1.0f; float fzFar = 600.0f;
 
-	cameraToClipMatrix[0].x = fFrustumScale;
-	cameraToClipMatrix[1].y = fFrustumScale;
+	cameraToClipMatrix[0].x = frustumScale;
+	cameraToClipMatrix[1].y = frustumScale;
 	cameraToClipMatrix[2].z = (fzFar + fzNear) / (fzNear - fzFar);
 	cameraToClipMatrix[2].w = -1.0f;
 	cameraToClipMatrix[3].z = (2 * fzFar * fzNear) / (fzNear - fzFar);
@@ -73,19 +72,19 @@ enum GimbalAxis
 	GIMBAL_Z_AXIS,
 };
 
-Framework::Mesh *g_Gimbals[3] = {NULL, NULL, NULL};
-const char *g_strGimbalNames[3] =
+Framework::Mesh *gimbals[3] = {NULL, NULL, NULL};
+const char *strGimbalNames[3] =
 {
 	"LargeGimbal.xml",
 	"MediumGimbal.xml",
 	"SmallGimbal.xml",
 };
 
-bool g_bDrawGimbals = true;
+bool drawGimbals = true;
 
 void DrawGimbal(glutil::MatrixStack &currMatrix, GimbalAxis eAxis, glm::vec4 baseColor)
 {
-	if(!g_bDrawGimbals)
+	if(!drawGimbals)
 		return;
 
 	glutil::PushStack pusher(currMatrix);
@@ -109,12 +108,12 @@ void DrawGimbal(glutil::MatrixStack &currMatrix, GimbalAxis eAxis, glm::vec4 bas
 	glUniform4fv(baseColorUnif, 1, glm::value_ptr(baseColor));
 	glUniformMatrix4fv(modelToCameraMatrixUnif, 1, GL_FALSE, glm::value_ptr(currMatrix.Top()));
 
-	g_Gimbals[eAxis]->Render();
+	gimbals[eAxis]->Render();
 
 	glUseProgram(0);
 }
 
-Framework::Mesh *g_pObject = NULL;
+Framework::Mesh *object = NULL;
 
 //Called after the window and OpenGL are initialized. Called exactly once, before the main loop.
 void init()
@@ -123,12 +122,12 @@ void init()
 
 	try
 	{
-		for(int iLoop = 0; iLoop < 3; iLoop++)
+		for(int loop = 0; loop < 3; loop++)
 		{
-			g_Gimbals[iLoop] = new Framework::Mesh(g_strGimbalNames[iLoop]);
+			gimbals[loop] = new Framework::Mesh(strGimbalNames[loop]);
 		}
 
-		g_pObject = new Framework::Mesh("Ship.xml");
+		object = new Framework::Mesh("Ship.xml");
 	}
 	catch(std::exception &except)
 	{
@@ -150,17 +149,17 @@ void init()
 struct GimbalAngles
 {
 	GimbalAngles()
-		: fAngleX(0.0f)
-		, fAngleY(0.0f)
-		, fAngleZ(0.0f)
+		: angleX(0.0f)
+		, angleY(0.0f)
+		, angleZ(0.0f)
 	{}
 
-	float fAngleX;
-	float fAngleY;
-	float fAngleZ;
+	float angleX;
+	float angleY;
+	float angleZ;
 };
 
-GimbalAngles g_angles;
+GimbalAngles angles;
 
 //Called to update the display.
 //You should call glutSwapBuffers after all of your rendering to display what you rendered.
@@ -173,11 +172,11 @@ void display()
 
 	glutil::MatrixStack currMatrix;
 	currMatrix.Translate(glm::vec3(0.0f, 0.0f, -200.0f));
-	currMatrix.RotateX(g_angles.fAngleX);
+	currMatrix.RotateX(angles.angleX);
 	DrawGimbal(currMatrix, GIMBAL_X_AXIS, glm::vec4(0.4f, 0.4f, 1.0f, 1.0f));
-	currMatrix.RotateY(g_angles.fAngleY);
+	currMatrix.RotateY(angles.angleY);
 	DrawGimbal(currMatrix, GIMBAL_Y_AXIS, glm::vec4(0.0f, 1.0f, 0.0f, 1.0f));
-	currMatrix.RotateZ(g_angles.fAngleZ);
+	currMatrix.RotateZ(angles.angleZ);
 	DrawGimbal(currMatrix, GIMBAL_Z_AXIS, glm::vec4(1.0f, 0.3f, 0.3f, 1.0f));
 
 	glUseProgram(theProgram);
@@ -187,19 +186,17 @@ void display()
 	glUniform4f(baseColorUnif, 1.0, 1.0, 1.0, 1.0);
 	glUniformMatrix4fv(modelToCameraMatrixUnif, 1, GL_FALSE, glm::value_ptr(currMatrix.Top()));
 
-	g_pObject->Render("tint");
+	object->Render("tint");
 
 	glUseProgram(0);
-
-	//glutSwapBuffers();
 }
 
 //Called whenever the window is resized. The new window size is given, in pixels.
 //This is an opportunity to call glViewport or glScissor to keep up with the change in size.
 void reshape (GLFWwindow *window, int w, int h)
 {
-	cameraToClipMatrix[0].x = fFrustumScale * (h / (float)w);
-	cameraToClipMatrix[1].y = fFrustumScale;
+	cameraToClipMatrix[0].x = frustumScale * (h / (float)w);
+	cameraToClipMatrix[1].y = frustumScale;
 
 	glUseProgram(theProgram);
 	glUniformMatrix4fv(cameraToClipMatrixUnif, 1, GL_FALSE, glm::value_ptr(cameraToClipMatrix));
@@ -221,24 +218,19 @@ void keyStateChanged(int key, int mods)
 {
 	switch (key)
 	{
-	case 27:
-		//glutLeaveMainLoop();
-		return;
-	case 'w': g_angles.fAngleX += SMALL_ANGLE_INCREMENT; break;
-	case 's': g_angles.fAngleX -= SMALL_ANGLE_INCREMENT; break;
+	case 'w': angles.angleX += SMALL_ANGLE_INCREMENT; break;
+	case 's': angles.angleX -= SMALL_ANGLE_INCREMENT; break;
 
-	case 'a': g_angles.fAngleY += SMALL_ANGLE_INCREMENT; break;
-	case 'd': g_angles.fAngleY -= SMALL_ANGLE_INCREMENT; break;
+	case 'a': angles.angleY += SMALL_ANGLE_INCREMENT; break;
+	case 'd': angles.angleY -= SMALL_ANGLE_INCREMENT; break;
 
-	case 'q': g_angles.fAngleZ += SMALL_ANGLE_INCREMENT; break;
-	case 'e': g_angles.fAngleZ -= SMALL_ANGLE_INCREMENT; break;
+	case 'q': angles.angleZ += SMALL_ANGLE_INCREMENT; break;
+	case 'e': angles.angleZ -= SMALL_ANGLE_INCREMENT; break;
 
 	case 32:
-		g_bDrawGimbals = !g_bDrawGimbals;
+		drawGimbals = !drawGimbals;
 		break;
 	}
-
-	//glutPostRedisplay();
 }
 
 
